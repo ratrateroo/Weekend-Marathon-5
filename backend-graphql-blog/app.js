@@ -1,6 +1,13 @@
 const express = require('express');
 
+const { graphqlHTTP } = require('express-graphql');
+
+const mongoose = require('mongoose');
+
 const app = express();
+
+//import graphQlSchema
+//import gralQlResolvers
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
