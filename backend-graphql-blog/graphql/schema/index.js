@@ -12,6 +12,26 @@ type User {
     lastname: String!
     blogs: [Blog!]
     friends: [User!]
+    createdAt: String!
+    updatedAt: String!
+}
+
+type Blog {
+    title: String!
+    content: String!
+    comments: [Commemnt!]
+    likes: Int!
+    createdAt: String!
+    updatedAt: String!
+    image: String!
+    author: User!
+}
+
+type Comment {
+    comment: String!
+    author: User!
+    createdAt: String!
+    updatedAt: String!
 }
 
 `);
