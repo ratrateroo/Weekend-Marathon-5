@@ -28,13 +28,13 @@ const userSchema = new Schema({
 		required: true,
 	},
 
-	blogs: [
+	createdBlogs: [
 		{
 			type: Schema.Types.ObjectId,
 			ref: 'Blog',
 		},
 	],
-	frieds: [
+	friends: [
 		{
 			type: Schema.Types.ObjectId,
 			ref: 'User',
