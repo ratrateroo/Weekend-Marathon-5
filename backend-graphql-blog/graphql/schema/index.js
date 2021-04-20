@@ -34,4 +34,17 @@ type Comment {
     updatedAt: String!
 }
 
+input UserInput {
+    username: String!
+    email: String!
+    password: String
+    firstname: String!
+    middlename: String!
+    lastname: String!
+}
+
+type RootMutation {
+    createUser(userInput: UserInput): User
+}
+
 `);
