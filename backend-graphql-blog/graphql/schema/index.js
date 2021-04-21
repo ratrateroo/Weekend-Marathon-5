@@ -17,6 +17,7 @@ type User {
 }
 
 type Blog {
+    _id: ID!
     title: String!
     content: String!
     comments: [Commemnt!]
@@ -28,6 +29,7 @@ type Blog {
 }
 
 type Comment {
+    _id: ID!
     comment: String!
     author: User!
     createdAt: String!
@@ -43,8 +45,17 @@ input UserInput {
     lastname: String!
 }
 
+input BlogInput {
+    title: String!
+    content: String!    
+    likes: Int!    
+    image: String!
+    
+}
+
 type RootMutation {
     createUser(userInput: UserInput): User
+    createBlog(blogInput: BlogInput): Blog
 }
 
 `);
