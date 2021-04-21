@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 
 const User = require('../../models/user');
+const Blog = require('../../models/blog');
 
 const user = async (userId) => {
 	try {
@@ -38,6 +39,38 @@ module.exports = {
 			const result = await user.save();
 			return { ...result._doc, password: null, _id: result.id };
 		} catch (err) {
+			throw err;
+		}
+	},
+	createBlog: async (args) => {
+		const blog = new Blog({
+			title: args.blogInput.title,
+			content: args.blogInput.content,
+			likes: args.blogInput.likes,
+			image: args.blogInput.image,
+			author: 'useridgoeshere',
+		});
+		let createdBlog;
+		try {
+			const result = await blog.save();
+			createdBlog = {
+				...result._doc,
+				_id: result._doc._id.toString(),
+				author: user.bind(this, result._doc.author),
+			};
+
+			const author = await User.findById('useridgoeshere');
+
+			if (!author) {
+				throw new Error('User not found.');
+			}
+
+			author.createBlog.push(blog);
+			await author.save();
+
+			return createdBlog;
+		} catch (err) {
+			console.log(err);
 			throw err;
 		}
 	},
