@@ -58,4 +58,6 @@ type RootMutation {
     createBlog(blogInput: BlogInput): Blog
 }
 
+
+
 `);
