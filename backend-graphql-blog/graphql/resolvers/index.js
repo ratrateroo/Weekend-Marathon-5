@@ -2,8 +2,7 @@ const bcrypt = require('bcryptjs');
 
 const User = require('../../models/user');
 const Blog = require('../../models/blog');
-const { events } = require('../../models/user');
-
+const Friend = require('../../models/friends');
 const user = async (userId) => {
 	try {
 		const user = await User.findById(userId);
@@ -94,6 +93,11 @@ module.exports = {
 	addFriend: async (args) => {
 		const fetchedFriend = await User.findOne({
 			_id: args.friendId,
+		});
+
+		const friend = new Friend({
+			user: 'idgoeshere',
+			friend: fetchedFriend,
 		});
 	},
 };
