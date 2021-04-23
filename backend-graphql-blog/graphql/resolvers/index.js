@@ -91,4 +91,9 @@ module.exports = {
 			throw err;
 		}
 	},
+	addFriend: async (args) => {
+		const fetchedFriend = await User.findOne({
+			_id: args.friendId,
+		});
+	},
 };

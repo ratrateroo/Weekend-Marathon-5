@@ -13,4 +13,4 @@ const friendsSchema = new Schema({
 	},
 });
 
-module.exports = mongoose.model('Friends', friendsSchema);
+module.exports = mongoose.model('Friend', friendsSchema);
