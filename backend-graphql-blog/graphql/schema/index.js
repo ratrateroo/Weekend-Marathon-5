@@ -53,9 +53,17 @@ input BlogInput {
     
 }
 
+type Friend {
+    _id: ID!
+    friend: User!
+    user: User!
+}
+
 type RootMutation {
     createUser(userInput: UserInput): User
     createBlog(blogInput: BlogInput): Blog
+    addFriend(friendId: ID!): Friend!
+
 }
 
 
