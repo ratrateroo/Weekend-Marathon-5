@@ -100,4 +100,12 @@ module.exports = {
 			friend: fetchedFriend,
 		});
 	},
+	removeFriend: async (args) => {
+		try {
+			const friend = await Friend.findById(args.friendId).populate('friend');
+			const event = {};
+		} catch (err) {
+			throw err;
+		}
+	},
 };
