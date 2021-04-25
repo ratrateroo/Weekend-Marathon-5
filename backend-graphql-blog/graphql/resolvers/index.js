@@ -103,7 +103,11 @@ module.exports = {
 	removeFriend: async (args) => {
 		try {
 			const friend = await Friend.findById(args.friendId).populate('friend');
-			const event = {};
+			const unfriended = {
+				...friend.friend._doc,
+				_id: friend.event.id,
+				user: user.bind(this, friend.friend._doc.username),
+			};
 		} catch (err) {
 			throw err;
 		}
