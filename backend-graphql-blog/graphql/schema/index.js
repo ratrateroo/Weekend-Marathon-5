@@ -59,6 +59,10 @@ type Friend {
     user: User!
 }
 
+type RootQuery {
+    friends: [Friend!]!
+}
+
 type RootMutation {
     createUser(userInput: UserInput): User
     createBlog(blogInput: BlogInput): Blog
