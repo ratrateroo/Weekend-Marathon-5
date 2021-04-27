@@ -33,6 +33,19 @@ const blogs = async (blogIds) => {
 };
 
 module.exports = {
+	friends: async () => {
+		try {
+			const friends = await Friend.find();
+			return friends.map((friend) => {
+				return {
+					...friend._doc,
+					_id: friend.id,
+				};
+			});
+		} catch (err) {
+			throw err;
+		}
+	},
 	createUser: async (args) => {
 		try {
 			const existingUser = await User.findOne({
