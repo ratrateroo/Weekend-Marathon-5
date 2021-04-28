@@ -37,10 +37,7 @@ module.exports = {
 		try {
 			const friends = await Friend.find();
 			return friends.map((friend) => {
-				return {
-					...friend._doc,
-					_id: friend.id,
-				};
+				return {};
 			});
 		} catch (err) {
 			throw err;
