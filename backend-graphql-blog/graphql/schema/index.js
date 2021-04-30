@@ -61,6 +61,7 @@ type Friend {
 
 type RootQuery {
     friends: [Friend!]!
+    blogs: [Blog!]
 }
 
 type RootMutation {
