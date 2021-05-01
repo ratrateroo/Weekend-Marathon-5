@@ -33,6 +33,20 @@ const blogs = async (blogIds) => {
 };
 
 module.exports = {
+	blogs: async () => {
+		try {
+			const blogs = await Blog.find();
+			return blogs.map((blog) => {
+				return {
+					...blog._doc,
+					_id: blog.id,
+				};
+			});
+		} catch (err) {
+			throw err;
+		}
+	},
+
 	friends: async () => {
 		try {
 			const friends = await Friend.find();
