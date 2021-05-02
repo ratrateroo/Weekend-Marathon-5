@@ -40,6 +40,8 @@ module.exports = {
 				return {
 					...blog._doc,
 					_id: blog.id,
+					title: blog._doc.title,
+					author: user.bind(this.blog._doc.author),
 				};
 			});
 		} catch (err) {
