@@ -72,6 +72,10 @@ type RootMutation {
 
 }
 
+schema {
+    query: RootQuery
+    mutation: RootMutation
+}
 
 
 `);
