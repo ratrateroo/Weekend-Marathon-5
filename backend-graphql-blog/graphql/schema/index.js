@@ -49,8 +49,11 @@ input BlogInput {
     title: String!
     content: String!    
     likes: Int!    
-    image: String!
-    
+    image: String!    
+}
+
+input CommentInput {
+    comment: String!
 }
 
 type Friend {
@@ -67,9 +70,9 @@ type RootQuery {
 type RootMutation {
     createUser(userInput: UserInput): User
     createBlog(blogInput: BlogInput): Blog
+    createComment(commentInput: CommentInput): Comment
     addFriend(friendId: ID!): Friend!
     removeFriend(friendId: ID!): Friend!
-
 }
 
 schema {
