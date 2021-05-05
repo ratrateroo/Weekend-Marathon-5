@@ -48,8 +48,7 @@ input UserInput {
 input BlogInput {
     title: String!
     content: String!    
-    likes: Int!    
-    image: String!    
+    image: String
 }
 
 input CommentInput {
