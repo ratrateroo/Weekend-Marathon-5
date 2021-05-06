@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 const User = require('../../models/user');
 const Blog = require('../../models/blog');
 const Friend = require('../../models/friends');
+const Comment = require('../../models/comments');
 const user = async (userId) => {
 	try {
 		const user = await User.findById(userId);
@@ -92,7 +93,7 @@ module.exports = {
 		const blog = new Blog({
 			title: args.blogInput.title,
 			content: args.blogInput.content,
-			likes: args.blogInput.likes,
+			//likes: args.blogInput.likes,
 			image: args.blogInput.image,
 			author: 'useridgoeshere',
 		});
@@ -119,6 +120,12 @@ module.exports = {
 			console.log(err);
 			throw err;
 		}
+	},
+	createComment: async (args) => {
+		const comment = new Comment({
+			comment: args.commentInput.comment,
+			author: 'useridgoeshere',
+		});
 	},
 	addFriend: async (args) => {
 		const fetchedFriend = await User.findOne({
