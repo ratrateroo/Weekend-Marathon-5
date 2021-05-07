@@ -126,6 +126,19 @@ module.exports = {
 			comment: args.commentInput.comment,
 			author: 'useridgoeshere',
 		});
+		let createdComment;
+		try {
+			const result = await comment.save();
+
+			createdComment = {
+				...result._doc,
+				_id: result._doc._id.toString(),
+				author: user.bind(this, result._doc.author),
+			};
+		} catch (err) {
+			console.log(err);
+			throw err;
+		}
 	},
 	addFriend: async (args) => {
 		const fetchedFriend = await User.findOne({
