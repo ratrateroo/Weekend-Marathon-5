@@ -135,6 +135,13 @@ module.exports = {
 				_id: result._doc._id.toString(),
 				author: user.bind(this, result._doc.author),
 			};
+			const author = await User.findById('useridgoeshere');
+			if (!author) {
+				throw new Error('User not found.');
+			}
+			author.createdComment.push(comment);
+			await author.save();
+			return createdComment;
 		} catch (err) {
 			console.log(err);
 			throw err;
