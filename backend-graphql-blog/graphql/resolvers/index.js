@@ -156,6 +156,12 @@ module.exports = {
 			user: 'idgoeshere',
 			friend: fetchedFriend,
 		});
+		try {
+			const result = await friend.save();
+		} catch (err) {
+			console.log(err);
+			throw err;
+		}
 	},
 	removeFriend: async (args) => {
 		try {
