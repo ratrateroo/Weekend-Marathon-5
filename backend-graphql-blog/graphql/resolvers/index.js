@@ -156,8 +156,13 @@ module.exports = {
 			user: 'idgoeshere',
 			friend: fetchedFriend,
 		});
+		let addedFriend;
 		try {
 			const result = await friend.save();
+			addedFriend = {
+				...result._doc,
+				_id: result._doc._id.toString(),
+			};
 		} catch (err) {
 			console.log(err);
 			throw err;
