@@ -163,6 +163,8 @@ module.exports = {
 				...result._doc,
 				_id: result._doc._id.toString(),
 			};
+
+			return addedFriend;
 		} catch (err) {
 			console.log(err);
 			throw err;
