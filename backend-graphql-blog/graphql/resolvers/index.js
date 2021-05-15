@@ -162,7 +162,14 @@ module.exports = {
 			addedFriend = {
 				...result._doc,
 				_id: result._doc._id.toString(),
+				user: user.bind(this, result._doc.creator),
 			};
+
+			const user = await User.findById('idgoeshere');
+
+			if (!user) {
+				throw new Error('User not found.');
+			}
 
 			return addedFriend;
 		} catch (err) {
