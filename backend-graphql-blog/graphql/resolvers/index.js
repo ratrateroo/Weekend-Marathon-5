@@ -171,6 +171,9 @@ module.exports = {
 				throw new Error('User not found.');
 			}
 
+			user.addedFriend.push(friend);
+			await user.save();
+
 			return addedFriend;
 		} catch (err) {
 			console.log(err);
