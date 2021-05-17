@@ -185,9 +185,12 @@ module.exports = {
 			const friend = await Friend.findById(args.friendId).populate('friend');
 			const unfriended = {
 				...friend.friend._doc,
-				_id: friend.event.id,
+				_id: friend.friend.id,
 				user: user.bind(this, friend.friend._doc.username),
 			};
+			await Friend.deleteOne({
+				_id: args.friendId,
+			});
 		} catch (err) {
 			throw err;
 		}
