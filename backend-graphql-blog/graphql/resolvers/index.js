@@ -191,6 +191,7 @@ module.exports = {
 			await Friend.deleteOne({
 				_id: args.friendId,
 			});
+			return unfriended;
 		} catch (err) {
 			throw err;
 		}
