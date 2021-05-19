@@ -186,7 +186,7 @@ module.exports = {
 			const unfriended = {
 				...friend.friend._doc,
 				_id: friend.friend.id,
-				user: user.bind(this, friend.friend._doc.username),
+				user: user.bind(this, friend.friend._doc.creator),
 			};
 			await Friend.deleteOne({
 				_id: args.friendId,
