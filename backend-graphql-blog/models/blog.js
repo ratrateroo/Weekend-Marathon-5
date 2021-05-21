@@ -14,11 +14,11 @@ const Schema = mongoose.Schema;
 const blogSchema = new Schema(
 	{
 		title: {
-			title: String,
+			type: String,
 			required: true,
 		},
 		content: {
-			title: String,
+			type: String,
 			required: true,
 		},
 		comments: {
@@ -26,11 +26,11 @@ const blogSchema = new Schema(
 			ref: 'Comment',
 		},
 		likes: {
-			title: Number,
+			type: Number,
 			required: true,
 		},
 		imgage: {
-			title: String,
+			type: String,
 			required: true,
 		},
 		author: {
