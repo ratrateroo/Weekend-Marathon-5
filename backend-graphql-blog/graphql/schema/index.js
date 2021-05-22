@@ -20,7 +20,7 @@ type Blog {
     _id: ID!
     title: String!
     content: String!
-    comments: [Commemnt!]
+    comments: [Comment!]
     likes: Int!
     createdAt: String!
     updatedAt: String!
