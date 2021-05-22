@@ -9,6 +9,8 @@ const graphQlSchema = require('./graphql/schema/index');
 
 //import gralQlResolvers
 
+const graphQlResolvers = require('./graphql/resolvers/index');
+
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
