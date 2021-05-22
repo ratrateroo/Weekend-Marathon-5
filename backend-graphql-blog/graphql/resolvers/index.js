@@ -78,7 +78,7 @@ module.exports = {
 			const user = new User({
 				username: args.userInput.username,
 				email: args.userInput.email,
-				password: args.userInput.password,
+				password: hashedPassword,
 				firstname: args.userInput.firstname,
 				middlename: args.userInput.middlename,
 				lastname: args.userInput.lastname,
