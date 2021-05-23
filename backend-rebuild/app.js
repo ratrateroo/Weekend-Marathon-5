@@ -1,10 +1,10 @@
 const express = require('express');
 
-const { graphHTTP } = require('express-graphql');
+const { graphqlHTTP } = require('express-graphql');
 
 const mongoose = require('mongoose');
 
-const graphQlShema = require('./graphql/schema/index');
+const graphQlSchema = require('./graphql/schema/index');
 
 const graphQlResolvers = require('./graphql/resolvers/index');
 
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(
 	'/graphql',
 	graphqlHTTP({
-		shema: graphQlShema,
+		schema: graphQlSchema,
 		rootValue: graphQlResolvers,
 		graphiql: true,
 	})
