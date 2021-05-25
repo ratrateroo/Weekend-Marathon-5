@@ -3,6 +3,18 @@ const bcrypt = require('bcryptjs');
 const User = require('../../models/user');
 
 module.exports = {
+	users: () => {
+		return User.find()
+			.then((users) => {
+				return users.map((user) => {
+					return { ...user._doc, _id: user._doc._id.toString() };
+				});
+			})
+			.catch((err) => {
+				throw err;
+			});
+	},
+
 	createUser: async (args) => {
 		try {
 			const existingUser = await User.findOne({
