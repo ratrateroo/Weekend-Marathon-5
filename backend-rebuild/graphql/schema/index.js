@@ -20,10 +20,10 @@ type Blog {
     title: String!
     content: String!
     
-    likes: Int!
+    
     createdAt: String!
     updatedAt: String!
-    image: String!
+    
     author: User!
 }
 

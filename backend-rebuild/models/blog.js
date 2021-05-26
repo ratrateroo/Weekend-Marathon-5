@@ -13,14 +13,6 @@ const blogSchema = new Schema(
 			required: true,
 		},
 
-		likes: {
-			type: Number,
-			required: true,
-		},
-		imgage: {
-			type: String,
-			required: true,
-		},
 		author: {
 			type: Schema.Types.ObjectId,
 			ref: 'User',
