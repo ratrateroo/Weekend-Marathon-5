@@ -12,10 +12,7 @@ const blogSchema = new Schema(
 			type: String,
 			required: true,
 		},
-		comments: {
-			type: Schema.Types.ObjectId,
-			ref: 'Comment',
-		},
+
 		likes: {
 			type: Number,
 			required: true,

@@ -10,9 +10,21 @@ type User {
     firstname: String!
     middlename: String!
     lastname: String!
-    
+    blogs: [Blog!]
     createAt: String!
     updateAt: String!
+}
+
+type Blog {
+    _id: ID!
+    title: String!
+    content: String!
+    
+    likes: Int!
+    createdAt: String!
+    updatedAt: String!
+    image: String!
+    author: User!
 }
 
 input UserInput {

@@ -28,6 +28,12 @@ const userSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		createdBlogs: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: 'Blog',
+			},
+		],
 	},
 	{ timestamps: true }
 );
