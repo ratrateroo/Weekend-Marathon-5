@@ -36,6 +36,11 @@ input UserInput {
     lastname: String!
 }
 
+input BlogInput {
+    title: String!
+    content: String!    
+    
+}
 
 
 
@@ -47,6 +52,7 @@ type RootQuery {
 
 type RootMutation {
     createUser(userInput: UserInput): User
+    createBlog(blogInput: BlogInput): Blog
     }
 
 schema {
