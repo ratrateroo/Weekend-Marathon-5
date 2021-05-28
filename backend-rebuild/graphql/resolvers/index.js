@@ -51,4 +51,36 @@ module.exports = {
 			throw err;
 		}
 	},
+	createBlog: (args) => {
+		const blog = new Blog({
+			title: args.blogInput.title,
+			content: args.blogInput.content,
+			creator: '60b107f56b993e2cc44ba7f6',
+		});
+
+		let createdBlog;
+		return blog
+			.save()
+			.then((result) => {
+				createdBlog = {
+					...result._doc,
+					_id: result._doc._id.toString(),
+				};
+				return User.findById('60b107f56b993e2cc44ba7f6');
+			})
+			.then((user) => {
+				if (!user) {
+					throw new Error('User not found.');
+				}
+				user.createBlogs.push(blog);
+				return user.save();
+			})
+			.then((result) => {
+				return createdBlog;
+			})
+			.catch((err) => {
+				console.log(err);
+				throw err;
+			});
+	},
 };
