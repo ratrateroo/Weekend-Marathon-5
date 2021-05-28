@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 
 const User = require('../../models/user');
+const Blog = require('../../models/blog');
 
 module.exports = {
 	users: () => {
@@ -13,6 +14,16 @@ module.exports = {
 			.catch((err) => {
 				throw err;
 			});
+	},
+	blog: () => {
+		return Blog.find().then((blogs) => {
+			return blogs.map((blog) => {
+				return {
+					...blog._doc,
+					_id: blog.id,
+				};
+			});
+		});
 	},
 
 	createUser: async (args) => {
