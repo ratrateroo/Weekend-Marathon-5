@@ -16,14 +16,18 @@ module.exports = {
 			});
 	},
 	blogs: () => {
-		return Blog.find().then((blogs) => {
-			return blogs.map((blog) => {
-				return {
-					...blog._doc,
-					_id: blog.id,
-				};
+		return Blog.find()
+			.then((blogs) => {
+				return blogs.map((blog) => {
+					return {
+						...blog._doc,
+						_id: blog.id,
+					};
+				});
+			})
+			.catch((err) => {
+				throw err;
 			});
-		});
 	},
 
 	createUser: async (args) => {
