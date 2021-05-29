@@ -15,7 +15,7 @@ module.exports = {
 				throw err;
 			});
 	},
-	blog: () => {
+	blogs: () => {
 		return Blog.find().then((blogs) => {
 			return blogs.map((blog) => {
 				return {
@@ -72,7 +72,7 @@ module.exports = {
 				if (!user) {
 					throw new Error('User not found.');
 				}
-				user.createBlogs.push(blog);
+				user.createdBlogs.push(blog);
 				return user.save();
 			})
 			.then((result) => {
