@@ -10,7 +10,7 @@ type User {
     firstname: String!
     middlename: String!
     lastname: String!
-    blogs: [Blog!]
+    createdBlogs: [Blog!]
     createAt: String!
     updateAt: String!
 }
