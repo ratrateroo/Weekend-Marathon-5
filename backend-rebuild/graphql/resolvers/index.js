@@ -3,9 +3,23 @@ const bcrypt = require('bcryptjs');
 const User = require('../../models/user');
 const Blog = require('../../models/blog');
 
+const user = (userId) => {
+	return User.findById(userId)
+		.then((user) => {
+			return {
+				...user._doc,
+				_id: user.id,
+			};
+		})
+		.catch((err) => {
+			throw err;
+		});
+};
+
 module.exports = {
 	users: () => {
 		return User.find()
+			.populate('createdBlogs')
 			.then((users) => {
 				return users.map((user) => {
 					return { ...user._doc, _id: user._doc._id.toString() };
@@ -22,6 +36,7 @@ module.exports = {
 					return {
 						...blog._doc,
 						_id: blog.id,
+						author: user.bind(this, blog._doc.author),
 					};
 				});
 			})
@@ -59,7 +74,7 @@ module.exports = {
 		const blog = new Blog({
 			title: args.blogInput.title,
 			content: args.blogInput.content,
-			creator: '60b107f56b993e2cc44ba7f6',
+			author: '60b107f56b993e2cc44ba7f6',
 		});
 
 		let createdBlog;
