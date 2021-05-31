@@ -4,8 +4,8 @@ const User = require('../../models/user');
 const Blog = require('../../models/blog');
 
 const blogs = (blogIds) => {
-	return Blog.find(
-		{ _id: { $in: blogIds } }.then((blogs) => {
+	return Blog.find({ _id: { $in: blogIds } })
+		.then((blogs) => {
 			return blogs.map((blog) => {
 				return {
 					...blog._doc,
@@ -14,7 +14,9 @@ const blogs = (blogIds) => {
 				};
 			});
 		})
-	);
+		.catch((err) => {
+			throw err;
+		});
 };
 
 const user = (userId) => {
@@ -23,6 +25,7 @@ const user = (userId) => {
 			return {
 				...user._doc,
 				_id: user.id,
+				createdBlogs: blogs.bind(this, user._doc.createdBlogs),
 			};
 		})
 		.catch((err) => {
