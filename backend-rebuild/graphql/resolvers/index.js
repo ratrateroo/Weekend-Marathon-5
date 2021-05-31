@@ -101,6 +101,7 @@ module.exports = {
 				createdBlog = {
 					...result._doc,
 					_id: result._doc._id.toString(),
+					author: user.bind(this, blog.author),
 				};
 				return User.findById('60b107f56b993e2cc44ba7f6');
 			})
