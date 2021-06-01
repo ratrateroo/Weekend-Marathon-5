@@ -19,18 +19,17 @@ const blogs = async (blogIds) => {
 	}
 };
 
-const user = (userId) => {
-	return User.findById(userId)
-		.then((user) => {
-			return {
-				...user._doc,
-				_id: user.id,
-				createdBlogs: blogs.bind(this, user._doc.createdBlogs),
-			};
-		})
-		.catch((err) => {
-			throw err;
-		});
+const user = async (userId) => {
+	try {
+		const user = await User.findById(userId);
+		return {
+			...user._doc,
+			_id: user.id,
+			createdBlogs: blogs.bind(this, user._doc.createdBlogs),
+		};
+	} catch (err) {
+		throw err;
+	}
 };
 
 module.exports = {
