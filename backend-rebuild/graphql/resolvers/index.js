@@ -3,20 +3,20 @@ const bcrypt = require('bcryptjs');
 const User = require('../../models/user');
 const Blog = require('../../models/blog');
 
-const blogs = (blogIds) => {
-	return Blog.find({ _id: { $in: blogIds } })
-		.then((blogs) => {
-			return blogs.map((blog) => {
-				return {
-					...blog._doc,
-					_id: blog.id,
-					author: user.bind(this, blog.author),
-				};
-			});
-		})
-		.catch((err) => {
-			throw err;
+const blogs = async (blogIds) => {
+	try {
+		const blogs = await Blog.find({ _id: { $in: blogIds } });
+		blogs.map((blog) => {
+			return {
+				...blog._doc,
+				_id: blog.id,
+				author: user.bind(this, blog.author),
+			};
 		});
+		return blogs;
+	} catch (err) {
+		throw err;
+	}
 };
 
 const user = (userId) => {
