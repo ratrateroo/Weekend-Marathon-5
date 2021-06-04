@@ -86,7 +86,7 @@ module.exports = {
 			throw err;
 		}
 	},
-	createBlog: (args) => {
+	createBlog: async (args) => {
 		const blog = new Blog({
 			title: args.blogInput.title,
 			content: args.blogInput.content,
@@ -94,29 +94,25 @@ module.exports = {
 		});
 
 		let createdBlog;
-		return blog
-			.save()
-			.then((result) => {
-				createdBlog = {
-					...result._doc,
-					_id: result._doc._id.toString(),
-					author: user.bind(this, blog.author),
-				};
-				return User.findById('60b107f56b993e2cc44ba7f6');
-			})
-			.then((user) => {
-				if (!user) {
-					throw new Error('User not found.');
-				}
-				user.createdBlogs.push(blog);
-				return user.save();
-			})
-			.then((result) => {
-				return createdBlog;
-			})
-			.catch((err) => {
-				console.log(err);
-				throw err;
-			});
+
+		try {
+			const result = await blog.save();
+			createdBlog = {
+				...result._doc,
+				_id: result._doc._id.toString(),
+				author: user.bind(this, blog.author),
+			};
+			const author = await User.findById('60b107f56b993e2cc44ba7f6');
+			if (!user) {
+				throw new Error('User not found.');
+			}
+
+			author.createdBlogs.push(blog);
+			await user.save();
+
+			return createdBlog;
+		} catch (err) {
+			throw err;
+		}
 	},
 };
