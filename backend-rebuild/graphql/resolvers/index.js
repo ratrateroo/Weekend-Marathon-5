@@ -33,17 +33,15 @@ const user = async (userId) => {
 };
 
 module.exports = {
-	users: () => {
-		return User.find()
-			.populate('createdBlogs')
-			.then((users) => {
-				return users.map((user) => {
-					return { ...user._doc, _id: user._doc._id.toString() };
-				});
-			})
-			.catch((err) => {
-				throw err;
+	users: async () => {
+		try {
+			const users = await User.find();
+			return users.map((user) => {
+				return { ...user._doc, _id: user._doc._id.toString() };
 			});
+		} catch (err) {
+			throw err;
+		}
 	},
 	blogs: () => {
 		return Blog.find()
