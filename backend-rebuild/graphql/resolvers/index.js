@@ -43,20 +43,19 @@ module.exports = {
 			throw err;
 		}
 	},
-	blogs: () => {
-		return Blog.find()
-			.then((blogs) => {
-				return blogs.map((blog) => {
-					return {
-						...blog._doc,
-						_id: blog.id,
-						author: user.bind(this, blog._doc.author),
-					};
-				});
-			})
-			.catch((err) => {
-				throw err;
+	blogs: async () => {
+		try {
+			const blog = Blog.find();
+			return blogs.map((blog) => {
+				return {
+					...blog._doc,
+					_id: blog.id,
+					author: user.bind(this, blog._doc.author),
+				};
 			});
+		} catch (err) {
+			throw err;
+		}
 	},
 
 	createUser: async (args) => {
