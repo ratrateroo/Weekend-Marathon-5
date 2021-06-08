@@ -42,6 +42,13 @@ input BlogInput {
     
 }
 
+type Friend {
+    _id: ID!
+    friend: User!
+    user: User!
+    createdAt: String!
+    updatedAt: String!
+}
 
 
 
