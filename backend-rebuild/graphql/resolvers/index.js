@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 
 const User = require('../../models/user');
 const Blog = require('../../models/blog');
+const Friend = require('../../models/friend');
 
 const blogs = async (blogIds) => {
 	try {
