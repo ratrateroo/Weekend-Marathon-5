@@ -27,6 +27,14 @@ type Blog {
     author: User!
 }
 
+type Friend {
+    _id: ID!
+    friend: User!
+    user: User!
+    createdAt: String!
+    updatedAt: String!
+}
+
 input UserInput {
     username: String!
     email: String!
