@@ -130,7 +130,7 @@ module.exports = {
 		}
 	},
 	addFriend: async (args) => {
-		const fetchedUser = await User.findOne({ _id: args.userId });
+		const fetchedUser = await User.findOne({ _id: args.friendId });
 
 		const friend = new Friend({
 			user: '60b107f56b993e2cc44ba7f6',
@@ -142,6 +142,8 @@ module.exports = {
 		return {
 			...result._doc,
 			_id: result.id,
+			user: user.bind(this, friend.user),
+			friend: user.bind(this, friend.friend),
 			createdAt: new Date(result._doc.createdAt).toISOString(),
 			updatedAt: new Date(result._doc.updatedAt).toISOString(),
 		};
