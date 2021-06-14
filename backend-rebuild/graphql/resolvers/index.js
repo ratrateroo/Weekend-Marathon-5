@@ -129,4 +129,21 @@ module.exports = {
 			throw err;
 		}
 	},
+	addFriend: async (args) => {
+		const fetchedUser = await User.findOne({ _id: args.userId });
+
+		const friend = new Friend({
+			user: '60b107f56b993e2cc44ba7f6',
+			friend: fetchedUser,
+		});
+
+		const result = await friend.save();
+
+		return {
+			...result._doc,
+			_id: result.id,
+			createdAt: new Date(result._doc.createdAt).toISOString(),
+			updatedAt: new Date(result._doc.updatedAt).toISOString(),
+		};
+	},
 };
