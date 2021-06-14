@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const friendsSchema = new Schema(
+const friendSchema = new Schema(
 	{
 		friend: {
 			type: Schema.Types.ObjectId,
@@ -16,4 +16,4 @@ const friendsSchema = new Schema(
 	{ timestamps: true }
 );
 
-module.exports = mongoose.model('Friend', friendsSchema);
+module.exports = mongoose.model('Friend', friendSchema);

@@ -59,6 +59,22 @@ module.exports = {
 		}
 	},
 
+	friends: async () => {
+		try {
+			const friends = await Friend.find();
+			return friends.map((friend) => {
+				return {
+					...friend._doc,
+					_id: friend._id,
+					createdAt: new Date(friend._doc.createdAt).toISOString(),
+					updatedAt: new Date(friend._doc.updatedAt).toISOString(),
+				};
+			});
+		} catch (err) {
+			throw err;
+		}
+	},
+
 	createUser: async (args) => {
 		try {
 			const existingUser = await User.findOne({
