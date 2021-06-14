@@ -63,12 +63,16 @@ type Friend {
 type RootQuery {
     users: [User!]!
     blogs: [Blog!]!
+    friends: [Friend!]!
+    
     
 }
 
 type RootMutation {
     createUser(userInput: UserInput): User
     createBlog(blogInput: BlogInput): Blog
+    addFriend(friendId: ID!): Friend!
+    removeFriend(friendId: ID!): Friend!
     }
 
 schema {
