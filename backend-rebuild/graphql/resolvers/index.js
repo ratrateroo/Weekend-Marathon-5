@@ -7,14 +7,13 @@ const Friend = require('../../models/friend');
 const blogs = async (blogIds) => {
 	try {
 		const blogs = await Blog.find({ _id: { $in: blogIds } });
-		blogs.map((blog) => {
+		return blogs.map((blog) => {
 			return {
 				...blog._doc,
 				_id: blog.id,
 				author: user.bind(this, blog.author),
 			};
 		});
-		return blogs;
 	} catch (err) {
 		throw err;
 	}
