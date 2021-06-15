@@ -4,19 +4,11 @@ const User = require('../../models/user');
 const Blog = require('../../models/blog');
 const Friend = require('../../models/friend');
 
-const transformBlog = (blog) => {
-	return {
-		...blog._doc,
-		_id: blog.id,
-		author: user.bind(this, blog.author),
-	};
-};
-
 const blogs = async (blogIds) => {
 	try {
 		const blogs = await Blog.find({ _id: { $in: blogIds } });
 		return blogs.map((blog) => {
-			transformBlog(blog);
+			return transformBlog(blog);
 		});
 	} catch (err) {
 		throw err;
@@ -36,6 +28,14 @@ const user = async (userId) => {
 	}
 };
 
+const transformBlog = (blog) => {
+	return {
+		...blog._doc,
+		_id: blog.id,
+		author: user.bind(this, blog.author),
+	};
+};
+
 module.exports = {
 	users: async () => {
 		try {
@@ -50,13 +50,9 @@ module.exports = {
 
 	blogs: async () => {
 		try {
-			const blogs = Blog.find();
+			const blogs = await Blog.find();
 			return blogs.map((blog) => {
-				return {
-					...blog._doc,
-					_id: blog.id,
-					author: user.bind(this, blog.author),
-				};
+				return transformBlog(blog);
 			});
 		} catch (err) {
 			throw err;
