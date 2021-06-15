@@ -148,4 +148,18 @@ module.exports = {
 			updatedAt: new Date(result._doc.updatedAt).toISOString(),
 		};
 	},
+	removeFriend: async (args) => {
+		try {
+			const friend = await Friend.findById(args.friendId).populate('friend');
+			const foundFriend = {
+				...friend.friend,
+				_id: friend.friend.id,
+				user: user.bind(this, friend.user),
+			};
+			await Friend.deleteOne({ _id: args.friendId });
+			return foundFriend;
+		} catch (err) {
+			throw err;
+		}
+	},
 };
