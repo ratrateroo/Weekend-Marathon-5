@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 const User = require('../../models/user');
 const Blog = require('../../models/blog');
 const Friend = require('../../models/friend');
+const { dateToString } = require('../../helpers/date');
 
 const blogs = async (blogIds) => {
 	try {
@@ -68,8 +69,8 @@ module.exports = {
 					_id: friend._id,
 					user: user.bind(this, friend.user),
 					friend: user.bind(this, friend.friend),
-					createdAt: new Date(friend._doc.createdAt).toISOString(),
-					updatedAt: new Date(friend._doc.updatedAt).toISOString(),
+					createdAt: dateToString(friend._doc.createdAt),
+					updatedAt: dateToString(friend._doc.updatedAt),
 				};
 			});
 		} catch (err) {
@@ -146,8 +147,8 @@ module.exports = {
 			_id: result.id,
 			user: user.bind(this, friend.user),
 			friend: user.bind(this, friend.friend),
-			createdAt: new Date(result._doc.createdAt).toISOString(),
-			updatedAt: new Date(result._doc.updatedAt).toISOString(),
+			createdAt: dateToString(result._doc.createdAt),
+			updatedAt: dateToString(result._doc.updatedAt),
 		};
 	},
 	removeFriend: async (args) => {
