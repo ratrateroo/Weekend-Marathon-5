@@ -3,15 +3,7 @@ const User = require('../../models/user');
 const Friend = require('../../models/friend');
 const { dateToString } = require('../../helpers/date');
 
-const { user, blogs } = require('./merge');
-
-const transformBlog = (blog) => {
-	return {
-		...blog._doc,
-		_id: blog.id,
-		author: user.bind(this, blog.author),
-	};
-};
+const { user } = require('./merge');
 
 module.exports = {
 	friends: async () => {

@@ -1,7 +1,8 @@
 const User = require('../../models/user');
 const Blog = require('../../models/blog');
+const { dateToString } = require('../../helpers/date');
 
-const { user, blogs } = require('./merge');
+const { user, transformBlog } = require('./merge');
 
 module.exports = {
 	blogs: async () => {
