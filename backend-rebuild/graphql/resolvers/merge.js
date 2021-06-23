@@ -28,7 +28,7 @@ const user = async (userId) => {
 const transformBlog = (blog) => {
 	return {
 		...blog._doc,
-		_id: blog.id,
+		_id: blog._doc._id.toString(),
 		author: user.bind(this, blog.author),
 	};
 };
