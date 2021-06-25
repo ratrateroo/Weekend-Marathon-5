@@ -15,6 +15,12 @@ type User {
     updateAt: String!
 }
 
+type AuthData {
+    userId: ID!
+    token: String!
+    tokenExpiration: Int!
+}
+
 type Blog {
     _id: ID!
     title: String!
@@ -58,6 +64,7 @@ type RootQuery {
     users: [User!]!
     blogs: [Blog!]!
     friends: [Friend!]!
+    login(email: String!, password: String!): AuthData!
     
     
 }
