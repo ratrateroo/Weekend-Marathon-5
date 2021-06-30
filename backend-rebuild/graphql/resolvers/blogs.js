@@ -15,7 +15,11 @@ module.exports = {
 		}
 	},
 
-	createBlog: async (args) => {
+	createBlog: async (args, req) => {
+		if (!req.isAuth) {
+			throw new Error('Unauthenticated!');
+		}
+
 		const blog = new Blog({
 			title: args.blogInput.title,
 			content: args.blogInput.content,

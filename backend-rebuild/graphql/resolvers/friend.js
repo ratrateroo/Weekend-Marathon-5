@@ -6,7 +6,11 @@ const { dateToString } = require('../../helpers/date');
 const { user } = require('./merge');
 
 module.exports = {
-	friends: async () => {
+	friends: async (args, req) => {
+		if (!req.isAuth) {
+			throw new Error('Unauthorized!');
+		}
+
 		try {
 			const friends = await Friend.find();
 			return friends.map((friend) => {
@@ -24,7 +28,10 @@ module.exports = {
 		}
 	},
 
-	addFriend: async (args) => {
+	addFriend: async (args, req) => {
+		if (!req.isAuth) {
+			throw new Error('Unauthorized!');
+		}
 		const fetchedUser = await User.findOne({ _id: args.friendId });
 
 		const friend = new Friend({
@@ -43,7 +50,10 @@ module.exports = {
 			updatedAt: dateToString(result._doc.updatedAt),
 		};
 	},
-	removeFriend: async (args) => {
+	removeFriend: async (args, req) => {
+		if (!req.isAuth) {
+			throw new Error('Unauthorized!');
+		}
 		try {
 			const friend = await Friend.findById(args.friendId).populate('friend');
 			const foundFriend = {
