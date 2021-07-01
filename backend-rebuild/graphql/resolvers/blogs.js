@@ -23,7 +23,7 @@ module.exports = {
 		const blog = new Blog({
 			title: args.blogInput.title,
 			content: args.blogInput.content,
-			author: '60b107f56b993e2cc44ba7f6',
+			author: req.userId,
 		});
 
 		let createdBlog;

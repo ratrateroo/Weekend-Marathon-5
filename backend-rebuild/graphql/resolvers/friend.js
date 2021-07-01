@@ -35,7 +35,7 @@ module.exports = {
 		const fetchedUser = await User.findOne({ _id: args.friendId });
 
 		const friend = new Friend({
-			user: '60b107f56b993e2cc44ba7f6',
+			user: req.userId,
 			friend: fetchedUser,
 		});
 
