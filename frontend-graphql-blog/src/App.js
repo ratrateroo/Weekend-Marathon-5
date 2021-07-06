@@ -5,8 +5,11 @@ import BlogsPage from './blogs/pages/blogs';
 const App = () => {
 	return (
 		<BrowserRouter>
-			<Route path="/" component={null} />
-			<Route path="/blogs" component={BlogsPage} />
+			<Switch>
+				<Redirect from="/" to="/blogs" exact />
+
+				<Route path="/blogs" component={BlogsPage} />
+			</Switch>
 		</BrowserRouter>
 	);
 };
