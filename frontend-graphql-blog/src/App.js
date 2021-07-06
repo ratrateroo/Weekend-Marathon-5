@@ -1,11 +1,14 @@
 import './App.css';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import BlogsPage from './blogs/pages/blogs';
 
-function App() {
+const App = () => {
 	return (
-		<div className="App">
-			<h1>Let's Get It On!</h1>
-		</div>
+		<BrowserRouter>
+			<Route path="/" component={null} />
+			<Route path="/blogs" component={BlogsPage} />
+		</BrowserRouter>
 	);
-}
+};
 
 export default App;
