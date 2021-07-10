@@ -11,7 +11,8 @@ import { AuthContext } from './shared/context/auth-context';
 
 const App = () => {
 	return (
-		<AuthContext.Provider>
+		<AuthContext.Provider
+			value={{ isLoggedIn: true, login: true, logout: false }}>
 			<Router>
 				<MainNavigation />
 			</Router>
