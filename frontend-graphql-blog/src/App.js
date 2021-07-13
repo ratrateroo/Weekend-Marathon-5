@@ -10,6 +10,7 @@ import MainNavigation from './shared/components/Navigation/MainNavigation';
 import { AuthContext } from './shared/context/auth-context';
 
 import UsersList from './user/components/UsersList';
+import UserLogin from './user/pages/UserLogin';
 
 const App = () => {
 	let routes = (
