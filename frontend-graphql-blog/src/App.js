@@ -17,6 +17,10 @@ const App = () => {
 			<Route path="/users" exact>
 				<UsersList title="Users List" />
 			</Route>
+			<Route path="/login" exact>
+				<UserLogin title="User Login" />
+			</Route>
+			<Redirect to="/login" />
 		</Switch>
 	);
 
