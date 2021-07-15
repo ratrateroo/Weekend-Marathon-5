@@ -34,7 +34,7 @@ mongoose
 	})
 	.then(() => {
 		console.log(`Connected to ${process.env.MONGO_DB}`);
-		app.listen(3000);
+		app.listen(8000);
 	})
 	.catch((error) => {
 		console.log(error);
