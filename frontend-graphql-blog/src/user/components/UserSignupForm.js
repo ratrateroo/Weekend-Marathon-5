@@ -42,20 +42,45 @@ const UserSignupForm = (props) => {
 
 	const signupSubmitHandler = async (event) => {
 		event.preventDefault();
-		fetch('http://localhost:5000/users/signup', {
+
+		const requestBody = {
+			query: `
+			mutation {
+				createUser(userInput: {
+					username: "${formState.inputs.name.value}",
+					email: "${formState.inputs.email.value}",
+					password: "${formState.inputs.name.value}",
+					firstname: "${formState.inputs.firstname.value}",
+					middlename: "${formState.inputs.middlename.value}",
+					lastname: "${formState.inputs.lastname.value}",
+
+				}) {
+					_id
+					username
+				}
+			}
+			`,
+		};
+
+		fetch('http://localhost:8000/graphql', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({
-				username: formState.inputs.name.value,
-				email: formState.inputs.email.value,
-				password: formState.inputs.name.value,
-				firstname: formState.inputs.firstname.value,
-				middlename: formState.inputs.middlename.value,
-				lastname: formState.inputs.lastname.value,
-			}),
-		});
+			body: JSON.stringify(requestBody),
+		})
+			.then((res) => {
+				if (res.status !== 200 && res.status !== 201) {
+					throw new Error('Failed!');
+				}
+				return res.json();
+			})
+			.then((resData) => {
+				console.log(resData);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 		console.log(formState.inputs);
 	};
 
