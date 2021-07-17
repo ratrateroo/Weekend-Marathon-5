@@ -9,17 +9,17 @@ import {
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import { AuthContext } from './shared/context/auth-context';
 
-import UsersList from './user/components/UsersList';
 import UserLogin from './user/pages/UserLogin';
+import UserSignupForm from './user/components/UserSignupForm';
 
 const App = () => {
 	let routes = (
 		<Switch>
-			<Route path="/users" exact>
-				<UsersList title="Users List" />
-			</Route>
 			<Route path="/login" exact>
 				<UserLogin title="User Login" />
+			</Route>
+			<Route path="/signup" exact>
+				<UserSignupForm title="User Signup" />
 			</Route>
 			<Redirect to="/login" />
 		</Switch>

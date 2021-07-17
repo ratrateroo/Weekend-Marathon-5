@@ -47,9 +47,9 @@ const UserSignupForm = (props) => {
 			query: `
 			mutation {
 				createUser(userInput: {
-					username: "${formState.inputs.name.value}",
+					username: "${formState.inputs.username.value}",
 					email: "${formState.inputs.email.value}",
-					password: "${formState.inputs.name.value}",
+					password: "${formState.inputs.password.value}",
 					firstname: "${formState.inputs.firstname.value}",
 					middlename: "${formState.inputs.middlename.value}",
 					lastname: "${formState.inputs.lastname.value}",
