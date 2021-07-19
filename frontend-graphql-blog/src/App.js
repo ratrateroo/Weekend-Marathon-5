@@ -27,6 +27,8 @@ const App = () => {
 
 	const logout = useCallback(() => {
 		setIsLoggedIn(false);
+		setToken(null);
+		setUserId(null);
 	}, []);
 
 	let routes = (
@@ -43,7 +45,13 @@ const App = () => {
 
 	return (
 		<AuthContext.Provider
-			value={{ isLoggedIn: false, login: login, logout: logout }}>
+			value={{
+				isLoggedIn: isLoggedIn,
+				token: token,
+				userId: userId,
+				login: login,
+				logout: logout,
+			}}>
 			<Router>
 				{routes}
 				<MainNavigation />
