@@ -1,3 +1,5 @@
+import React, { useState, useCallback } from 'react';
+
 import './App.css';
 import {
 	BrowserRouter as Router,
@@ -13,6 +15,20 @@ import UserLogin from './user/pages/UserLogin';
 import UserSignupForm from './user/components/UserSignupForm';
 
 const App = () => {
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [token, setToken] = useState(null);
+	const [userId, setUserId] = useState(null);
+
+	const login = useCallback((token, userId, tokenExpiration) => {
+		setIsLoggedIn(true);
+		setToken(token);
+		setUserId(userId);
+	}, []);
+
+	const logout = useCallback(() => {
+		setIsLoggedIn(false);
+	}, []);
+
 	let routes = (
 		<Switch>
 			<Route path="/login" exact>
@@ -27,7 +43,7 @@ const App = () => {
 
 	return (
 		<AuthContext.Provider
-			value={{ isLoggedIn: false, login: false, logout: true }}>
+			value={{ isLoggedIn: false, login: login, logout: logout }}>
 			<Router>
 				{routes}
 				<MainNavigation />

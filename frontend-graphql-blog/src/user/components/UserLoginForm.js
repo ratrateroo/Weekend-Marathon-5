@@ -28,8 +28,48 @@ const UserLoginForm = () => {
 		false
 	);
 
-	const loginSubmitHandler = (event) => {
+	const loginSubmitHandler = async (event) => {
 		event.preventDefault();
+
+		const requestBody = {
+			query: `
+			mutation {
+				createUser(userInput: {
+					username: "${formState.inputs.username.value}",
+					email: "${formState.inputs.email.value}",
+					password: "${formState.inputs.password.value}",
+					firstname: "${formState.inputs.firstname.value}",
+					middlename: "${formState.inputs.middlename.value}",
+					lastname: "${formState.inputs.lastname.value}",
+
+				}) {
+					_id
+					username
+				}
+			}
+			`,
+		};
+
+		fetch('http://localhost:8000/graphql', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(requestBody),
+		})
+			.then((res) => {
+				if (res.status !== 200 && res.status !== 201) {
+					throw new Error('Failed!');
+				}
+				return res.json();
+			})
+			.then((resData) => {
+				console.log(resData);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+
 		console.log(formState.inputs);
 		auth.login();
 	};
