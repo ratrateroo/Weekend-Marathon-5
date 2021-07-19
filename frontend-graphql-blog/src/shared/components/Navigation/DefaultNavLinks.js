@@ -13,7 +13,7 @@ const NavLinks = (props) => {
 				{/* <a href="../Blogs/Blogs.html" className="c-default-navigation__link">
                Blogs
             </a> */}
-				<NavLink to="/" className="c-default-navigation__link" exact>
+				<NavLink to="/blogs" className="c-default-navigation__link" exact>
 					Blogs
 				</NavLink>
 			</li>
@@ -21,9 +21,18 @@ const NavLinks = (props) => {
 				{/* <a href="../User List/User List.html" className="c-default-navigation__link">
                Users
             </a> */}
-				<NavLink to="/" className="c-default-navigation__link" exact>
+				<NavLink to="/users" className="c-default-navigation__link" exact>
 					Users
 				</NavLink>
+
+				{auth.token && (
+					<NavLink
+						to="/friends"
+						className="c-default-navigation__link"
+						exact>
+						Friends
+					</NavLink>
+				)}
 			</li>
 		</ul>
 	);
