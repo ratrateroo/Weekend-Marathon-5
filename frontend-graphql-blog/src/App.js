@@ -36,10 +36,12 @@ const App = () => {
 			<Route path="/login" exact>
 				<UserLogin title="User Login" />
 			</Route>
-			<Route path="/signup" exact>
-				<UserSignupForm title="User Signup" />
-			</Route>
-			<Redirect to="/login" />
+			{!isLoggedIn && (
+				<Route path="/signup" exact>
+					<UserSignupForm title="User Signup" />
+				</Route>
+			)}
+			{!token && <Redirect from="/" to="/login" exact />}
 		</Switch>
 	);
 
