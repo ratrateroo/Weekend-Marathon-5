@@ -13,6 +13,7 @@ import { AuthContext } from './shared/context/auth-context';
 
 import UserLogin from './user/pages/UserLogin';
 import UserSignupForm from './user/components/UserSignupForm';
+import UsersList from './user/components/UserList';
 
 const App = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -33,6 +34,9 @@ const App = () => {
 
 	let routes = (
 		<Switch>
+			<Route path="/users" exact>
+				<UsersList title="Users" />
+			</Route>
 			<Route path="/login" exact>
 				<UserLogin title="User Login" />
 			</Route>
