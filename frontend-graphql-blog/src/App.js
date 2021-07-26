@@ -42,6 +42,9 @@ const App = () => {
 			<Route path="/users" exact>
 				<UsersList title="Users" />
 			</Route>
+			<Route path="/blogs/:uid" exact>
+				<UserBlogs title="User Blogs" />
+			</Route>
 			<Route path="/profile/:uid" exact>
 				<UserProfile title="User Profile" />
 			</Route>
