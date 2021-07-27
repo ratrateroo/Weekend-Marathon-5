@@ -1,0 +1,47 @@
+.c-form-blog {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+}
+.c-form-blog__body {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+.c-form-blog-input {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+.c-form-blog-input__label {
+	color: var(--Cadet-Blue);
+	width: 100%;
+}
+.c-form-blog-input__title {
+	height: 1.3rem;
+	width: 100%;
+}
+.c-form-blog-input__content {
+	width: 100%;
+	resize: none;
+	height: 100%;
+}
+
+.c-form-blog__button {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	width: 100%;
+}
+.c-form-blog__button-holder {
+	width: 200px;
+}
