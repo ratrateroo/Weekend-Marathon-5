@@ -16,6 +16,9 @@ import UserSignupForm from './user/components/UserSignupForm';
 import UsersList from './user/components/UserList';
 import UserProfile from './user/pages/UserProfile';
 
+import Blogs from './blogs/pages/Blogs';
+import UserBlogs from './user/pages/UserBlogs';
+import CreateBlog from './blogs/pages/CreateBlog';
 import UpdateBlog from './blogs/pages/UpdateBlog';
 
 const App = () => {
