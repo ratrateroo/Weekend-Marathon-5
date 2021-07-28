@@ -1,0 +1,16 @@
+.c-form-blog {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+}
+.c-form-blog__body {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
