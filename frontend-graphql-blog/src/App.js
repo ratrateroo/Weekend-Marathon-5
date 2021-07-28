@@ -16,6 +16,8 @@ import UserSignupForm from './user/components/UserSignupForm';
 import UsersList from './user/components/UserList';
 import UserProfile from './user/pages/UserProfile';
 
+import UpdateBlog from './blogs/pages/UpdateBlog';
+
 const App = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [token, setToken] = useState(null);
@@ -48,6 +50,10 @@ const App = () => {
 
 			<Route path="/blog/new" exact>
 				<CreateBlog title="Create Blog" />
+			</Route>
+
+			<Route path="/blog/update/:bid" exact>
+				<UpdateBlog title="Update Blog" />
 			</Route>
 
 			<Route path="/profile/:uid" exact>
