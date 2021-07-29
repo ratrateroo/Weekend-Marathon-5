@@ -16,6 +16,7 @@ import UserSignupForm from './user/components/UserSignupForm';
 import UsersList from './user/components/UserList';
 import UserProfile from './user/pages/UserProfile';
 
+import Blog from './blogs/pages/Blog';
 import Blogs from './blogs/pages/Blogs';
 import UserBlogs from './user/pages/UserBlogs';
 import CreateBlog from './blogs/pages/CreateBlog';
@@ -57,6 +58,10 @@ const App = () => {
 
 			<Route path="/blog/update/:bid" exact>
 				<UpdateBlog title="Update Blog" />
+			</Route>
+
+			<Route path="/blog/:bid" exact>
+				<Blog title="<Username>'s Blog" />
 			</Route>
 
 			<Route path="/profile/:uid" exact>
