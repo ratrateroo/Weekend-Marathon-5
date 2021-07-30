@@ -14,6 +14,7 @@ const UserProfile = (props) => {
 			firstname: 'James Bong',
 			middlename: 'Meister',
 			lastname: 'Lee',
+			createdBlogs: [],
 		},
 		{
 			_id: 'userid2',
@@ -23,6 +24,7 @@ const UserProfile = (props) => {
 			firstname: 'Roseanne ',
 			middlename: 'Unknown',
 			lastname: 'Park',
+			createdBlogs: [],
 		},
 		{
 			_id: 'userid3',
@@ -32,6 +34,7 @@ const UserProfile = (props) => {
 			firstname: 'Jisoo ',
 			middlename: 'Unknown',
 			lastname: 'Kim',
+			createdBlogs: [],
 		},
 		{
 			_id: 'userid4',
@@ -41,6 +44,7 @@ const UserProfile = (props) => {
 			firstname: 'Lalisa ',
 			middlename: 'Unknown',
 			lastname: 'Manoban',
+			createdBlogs: [],
 		},
 		{
 			_id: 'userid5',
@@ -50,11 +54,12 @@ const UserProfile = (props) => {
 			firstname: 'Jennie ',
 			middlename: 'Unknown',
 			lastname: 'Kim',
+			createdBlogs: [],
 		},
 	];
 
 	const userId = useParams().userId;
-	const loadedUser = USERS.filter((user) => user.id === userId);
+	const loadedUser = USERS.filter((user) => user._id === userId);
 	// const loadedUser = USERS.find(user => user.id === userId);
 
 	return (
