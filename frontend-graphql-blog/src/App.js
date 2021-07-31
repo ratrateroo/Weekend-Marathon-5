@@ -13,7 +13,7 @@ import { AuthContext } from './shared/context/auth-context';
 
 import UserLogin from './user/pages/UserLogin';
 import UserSignupForm from './user/components/UserSignupForm';
-import UsersList from './user/components/UserList';
+import UsersList from './user/components/UsersList';
 import UserProfile from './user/pages/UserProfile';
 
 import Blog from './blogs/pages/Blog';
