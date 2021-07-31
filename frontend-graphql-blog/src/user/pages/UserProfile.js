@@ -58,7 +58,7 @@ const UserProfile = (props) => {
 		},
 	];
 
-	const userId = useParams().userId;
+	const userId = useParams().uid;
 	const loadedUser = USERS.filter((user) => user._id === userId);
 	// const loadedUser = USERS.find(user => user.id === userId);
 
