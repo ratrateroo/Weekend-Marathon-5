@@ -15,6 +15,7 @@ const UserProfile = (props) => {
 			middlename: 'Meister',
 			lastname: 'Lee',
 			createdBlogs: [],
+			friends: 0,
 		},
 		{
 			_id: 'userid2',
@@ -25,6 +26,7 @@ const UserProfile = (props) => {
 			middlename: 'Unknown',
 			lastname: 'Park',
 			createdBlogs: [],
+			friends: 0,
 		},
 		{
 			_id: 'userid3',
@@ -35,6 +37,7 @@ const UserProfile = (props) => {
 			middlename: 'Unknown',
 			lastname: 'Kim',
 			createdBlogs: [],
+			friends: 0,
 		},
 		{
 			_id: 'userid4',
@@ -45,6 +48,7 @@ const UserProfile = (props) => {
 			middlename: 'Unknown',
 			lastname: 'Manoban',
 			createdBlogs: [],
+			friends: 0,
 		},
 		{
 			_id: 'userid5',
@@ -55,6 +59,7 @@ const UserProfile = (props) => {
 			middlename: 'Unknown',
 			lastname: 'Kim',
 			createdBlogs: [],
+			friends: 0,
 		},
 	];
 
