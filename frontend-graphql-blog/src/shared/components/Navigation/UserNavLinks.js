@@ -21,9 +21,6 @@ const NavLinks = (props) => {
 									</NavLink>
 								</li>
 								<li className="c-user-navigation__item">
-									{/* <a href="../Login/Login.html" className="c-user-navigation__link">
-               Login
-            </a> */}
 									<NavLink
 										to="/login"
 										className="c-user-navigation__link"
