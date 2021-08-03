@@ -2,16 +2,8 @@ import React from 'react';
 
 import './UserProfileInfo.css';
 import dummy_image from '../../Images/user_dummy.png';
-
+import Button from '../../shared/components/FormElements/Button';
 const UserProfileInfo = (props) => {
-	// if (props.user.length === 0) {
-	//    return (
-	//       <div>
-	//          <h2>User Profile Unavailable!</h2>
-	//       </div>
-	//    );
-	// }
-
 	return (
 		<div className="c-user-profile">
 			<div className="c-user-profile__image">
@@ -45,6 +37,7 @@ const UserProfileInfo = (props) => {
 						Friends: {props.friends}
 					</li>
 				</ul>
+				<Button>Update Profile</Button>
 			</div>
 		</div>
 	);
