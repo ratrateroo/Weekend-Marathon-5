@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './UserProfileInfo.css';
 import dummy_image from '../../Images/user_dummy.png';
 import Button from '../../shared/components/FormElements/Button';
+import Modal from '../../shared/components/UIElements/Modal';
 const UserProfileInfo = (props) => {
+	const [creating, setCreating] = useState(false);
+
+	const startCreateEventHandler = () => {
+		setCreating(true);
+	};
+
+	const cancelCreateEventHandler = () => {
+		setCreating(false);
+	};
+
 	return (
 		<div className="c-user-profile">
 			<div className="c-user-profile__image">
@@ -37,7 +48,21 @@ const UserProfileInfo = (props) => {
 						Friends: {props.friends}
 					</li>
 				</ul>
-				<Button>Update Profile</Button>
+				<Button onClick={startCreateEventHandler}>Update Profile</Button>
+				{creating && (
+					<Modal
+						header="Update Profile"
+						footer={
+							<React.Fragment>
+								<Button submit onClick={console.log('Clicked Update')}>
+									Update
+								</Button>
+								<Button cancel onClick={cancelCreateEventHandler}>
+									Cancel
+								</Button>
+							</React.Fragment>
+						}></Modal>
+				)}
 			</div>
 		</div>
 	);
