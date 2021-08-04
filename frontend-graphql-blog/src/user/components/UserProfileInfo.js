@@ -49,20 +49,20 @@ const UserProfileInfo = (props) => {
 					</li>
 				</ul>
 				<Button onClick={startCreateEventHandler}>Update Profile</Button>
-				{creating && (
-					<Modal
-						header="Update Profile"
-						footer={
-							<React.Fragment>
-								<Button submit onClick={console.log('Clicked Update')}>
-									Update
-								</Button>
-								<Button cancel onClick={cancelCreateEventHandler}>
-									Cancel
-								</Button>
-							</React.Fragment>
-						}></Modal>
-				)}
+
+				<Modal
+					show
+					header="Update Profile"
+					footer={
+						<React.Fragment>
+							<Button submit onClick={console.log('Clicked Update')}>
+								Update
+							</Button>
+							<Button cancel onClick={cancelCreateEventHandler}>
+								Cancel
+							</Button>
+						</React.Fragment>
+					}></Modal>
 			</div>
 		</div>
 	);
