@@ -8,11 +8,11 @@ const UserProfileInfo = (props) => {
 	const [creating, setCreating] = useState(false);
 
 	const startCreateEventHandler = () => {
-		setCreating(true);
+		setCreating(!creating);
 	};
 
 	const cancelCreateEventHandler = () => {
-		setCreating(false);
+		setCreating(!creating);
 	};
 
 	return (
@@ -49,20 +49,22 @@ const UserProfileInfo = (props) => {
 					</li>
 				</ul>
 				<Button onClick={startCreateEventHandler}>Update Profile</Button>
-
-				<Modal
-					show
-					header="Update Profile"
-					footer={
-						<React.Fragment>
-							<Button submit onClick={console.log('Clicked Update')}>
-								Update
-							</Button>
-							<Button cancel onClick={cancelCreateEventHandler}>
-								Cancel
-							</Button>
-						</React.Fragment>
-					}></Modal>
+				{creating && (
+					<Modal
+						header="Update Profile"
+						footer={
+							<React.Fragment>
+								<Button submit onClick={console.log('Clicked Update')}>
+									Update
+								</Button>
+								<Button cancel onClick={cancelCreateEventHandler}>
+									Cancel
+								</Button>
+							</React.Fragment>
+						}>
+						<h1>Modal</h1>
+					</Modal>
+				)}
 			</div>
 		</div>
 	);

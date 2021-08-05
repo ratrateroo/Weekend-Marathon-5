@@ -12,11 +12,12 @@ const ModalOverlay = (props) => {
 				<h2 className={`c-modal__title`}>{props.header}</h2>
 			</header>
 			<form
-				onSubmit={
-					props.onSubmit
-						? props.onSubmit
-						: (event) => event.preventDefault()
-				}>
+			// onSubmit={
+			// 	props.onSubmit
+			// 		? props.onSubmit
+			// 		: (event) => event.preventDefault()
+			// }
+			>
 				<div className={`c-modal__content-`}>{props.children}</div>
 				<footer className={`c-modal__footer`}>{props.footer}</footer>
 			</form>
@@ -24,20 +25,15 @@ const ModalOverlay = (props) => {
 	);
 
 	//return ReactDOM.createPortal(content, document.getElementById('modal-hook'));
+	return content;
 };
 
 const Modal = (props) => {
 	return (
 		<React.Fragment>
-			{props.show && <Backdrop onClick={props.onCancel} />}
-			<CSSTransition
-				in={props.show}
-				mountOnEnter
-				unmountOnExit
-				timeout={200}
-				clasNames="c-modal">
-				<ModalOverlay {...props} />
-			</CSSTransition>
+			{/* {props.show && <Backdrop onClick={props.onCancel} />} */}
+
+			<ModalOverlay {...props} />
 		</React.Fragment>
 	);
 };
