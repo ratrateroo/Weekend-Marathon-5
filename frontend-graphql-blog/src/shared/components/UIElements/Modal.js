@@ -11,10 +11,10 @@ const ModalOverlay = (props) => {
 			<header className={`c-modal__header`}>
 				<h2 className={`c-modal__title`}>{props.header}</h2>
 			</header>
-			<form>
+			<div>
 				<div className={`c-modal__content-`}>{props.children}</div>
 				<footer className={`c-modal__footer`}>{props.footer}</footer>
-			</form>
+			</div>
 		</div>
 	);
 

@@ -21,6 +21,10 @@ const UserProfileInfo = (props) => {
 		setCreating(!creating);
 	};
 
+	const updateProfileSubmitHandler = () => {
+		console.log('Update Profile Submit Clicked');
+	};
+
 	const [formState, inputHandler] = useForm(
 		{
 			username: {
@@ -100,7 +104,7 @@ const UserProfileInfo = (props) => {
 						}>
 						<div className="c-form">
 							<form
-								onSubmit={signupSubmitHandler}
+								onSubmit={updateProfileSubmitHandler}
 								className="c-form__body">
 								<Input
 									element="input"
