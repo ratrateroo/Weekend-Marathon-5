@@ -16,7 +16,7 @@ const MainBody = (props) => {
 
 	return (
 		<React.Fragment>
-			<Modal
+			{/* <Modal
 				show={showModal}
 				onCancel={closeModalHandler}
 				header="Header Part"
@@ -24,7 +24,7 @@ const MainBody = (props) => {
 				<div>
 					<h2>Modal</h2>
 				</div>
-			</Modal>
+			</Modal> */}
 			<main className="o-main-area">
 				<section className="o-section-container">
 					<div className="o-page-heading">
