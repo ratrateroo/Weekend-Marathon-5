@@ -32,8 +32,12 @@ const modal = (props) => (
 				<footer className={`c-modal__footer`}>
 					{
 						<>
-							<Button cancel>Cancel</Button>
-							<Button submit>Ok</Button>
+							<Button cancel onClick={props.onCancel}>
+								Cancel
+							</Button>
+							<Button submit onClick={props.onConfirm}>
+								Ok
+							</Button>
 						</>
 					}
 				</footer>
