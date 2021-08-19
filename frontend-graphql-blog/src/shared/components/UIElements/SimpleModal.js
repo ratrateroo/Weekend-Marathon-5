@@ -20,6 +20,16 @@ const modal = (props) => (
 				</button>
 			)}
 		</section>
+
+		<div className={`c-modal`} style={props.style}>
+			<header className={`c-modal__header`}>
+				<h2 className={`c-modal__title`}>{props.header}</h2>
+			</header>
+			<div>
+				<div className={`c-modal__content-`}>{props.children}</div>
+				<footer className={`c-modal__footer`}>{props.footer}</footer>
+			</div>
+		</div>
 	</div>
 );
 
