@@ -4,7 +4,7 @@ import './UserProfileInfo.css';
 import dummy_image from '../../Images/user_dummy.png';
 import Button from '../../shared/components/FormElements/Button';
 import Input from '../../shared/components/FormElements/Input';
-import Modal from '../../shared/components/UIElements/Modal';
+import SimpleModal from '../../shared/components/UIElements/SimpleModal';
 import {
 	VALIDATOR_REQUIRE,
 	VALIDATOR_MINLENGTH,
@@ -90,18 +90,23 @@ const UserProfileInfo = (props) => {
 				</ul>
 				<Button onClick={startCreateEventHandler}>Update Profile</Button>
 				{creating && (
-					<Modal
+					<SimpleModal
 						header="Update Profile"
-						footer={
-							<React.Fragment>
-								<Button submit onClick={console.log('Clicked Update')}>
-									Update
-								</Button>
-								<Button cancel onClick={cancelCreateEventHandler}>
-									Cancel
-								</Button>
-							</React.Fragment>
-						}>
+						canCancel
+						canConfirm
+						onCancel={cancelCreateEventHandler}
+						onConfirm={updateProfileSubmitHandler}
+						// footer={
+						// 	<React.Fragment>
+						// 		<Button submit onClick={console.log('Clicked Update')}>
+						// 			Update
+						// 		</Button>
+						// 		<Button cancel onClick={cancelCreateEventHandler}>
+						// 			Cancel
+						// 		</Button>
+						// 	</React.Fragment>
+						// }
+					>
 						<div className="c-form">
 							<form
 								onSubmit={updateProfileSubmitHandler}
@@ -179,7 +184,7 @@ const UserProfileInfo = (props) => {
 								</div>
 							</form>
 						</div>
-					</Modal>
+					</SimpleModal>
 				)}
 			</div>
 		</div>
