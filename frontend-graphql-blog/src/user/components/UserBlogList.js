@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './UserBlogList.css';
 import image from '../../Images/cove view.jpg';
 import Button from '../../shared/components/FormElements/Button';
-import Modal from '../../shared/components/UIElements/Modal';
+import SimpleModal from '../../shared/components/UIElements/SimpleModal';
 import UserBlogItem from './UserBlogItem';
 const UserBlogList = (props) => {
 	const BLOGS = [
@@ -120,25 +120,16 @@ const UserBlogList = (props) => {
 
 	return (
 		<React.Fragment>
-			<Modal
-				show={showConfirmModal}
+			<SimpleModal
+				canConfirm
+				canCancel
+				onConfirm={cancelDeleteHandler}
 				onCancel={cancelDeleteHandler}
-				header="Confirm Delete"
-				footer={
-					<React.Fragment>
-						<Button cancel onClick={cancelDeleteHandler}>
-							Cancel
-						</Button>
-
-						<Button delete onClick={console.log('Deleting')}>
-							Delete
-						</Button>
-					</React.Fragment>
-				}>
+				header="Confirm Delete">
 				<div>
 					<h2>Modal</h2>
 				</div>
-			</Modal>
+			</SimpleModal>
 			<div className="c-blogs-list">
 				<div role="grid" className="c-blogs-table">
 					<div role="row" className="c-blogs-table__header">
