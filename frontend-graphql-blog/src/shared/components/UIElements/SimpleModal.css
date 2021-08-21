@@ -1,7 +1,10 @@
 .c-modal {
 	z-index: 100;
 	position: fixed;
-	top: 10vh;
+	top: 5%;
+	left: 5%;
+	right: 5%;
+	bottom: 5%;
 	height: auto;
 	width: 75%;
 	background: white;
