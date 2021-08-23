@@ -29,6 +29,7 @@
 
 .c-modal__footer {
 	padding: 1rem 0.5rem;
+	display: flex;
 }
 
 .c-modal-enter {
