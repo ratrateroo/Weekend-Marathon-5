@@ -176,12 +176,6 @@ const UserProfileInfo = (props) => {
 									errorText="Please enter a valid lastname."
 									onInput={inputHandler}
 								/>
-
-								<div className="c-form-button">
-									<Button submit disabled={!formState.isValid}>
-										Sign Up
-									</Button>
-								</div>
 							</form>
 						</div>
 					</SimpleModal>

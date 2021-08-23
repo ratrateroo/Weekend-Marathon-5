@@ -13,15 +13,19 @@ const modal = (props) => (
 			<div className={`c-modal__content-`}>{props.children}</div>
 			<footer className={`c-modal__footer`}>
 				{props.canCancel && (
-					<Button cancel onClick={props.onCancel}>
-						Cancel
-					</Button>
+					<div className="c-form-button">
+						<Button cancel onClick={props.onCancel}>
+							Cancel
+						</Button>
+					</div>
 				)}
 
 				{props.canConfirm && (
-					<Button submit onClick={props.onConfirm}>
-						Ok
-					</Button>
+					<div className="c-form-button">
+						<Button submit onClick={props.onConfirm}>
+							Ok
+						</Button>
+					</div>
 				)}
 			</footer>
 		</div>
