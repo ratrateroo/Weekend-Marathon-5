@@ -5,6 +5,7 @@ import dummy_image from '../../Images/user_dummy.png';
 import Button from '../../shared/components/FormElements/Button';
 import Input from '../../shared/components/FormElements/Input';
 import SimpleModal from '../../shared/components/UIElements/SimpleModal';
+import FormModal from '../../shared/components/UIElements/FormModal';
 import {
 	VALIDATOR_REQUIRE,
 	VALIDATOR_MINLENGTH,
