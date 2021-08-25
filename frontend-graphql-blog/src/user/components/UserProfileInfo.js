@@ -91,7 +91,7 @@ const UserProfileInfo = (props) => {
 				</ul>
 				<Button onClick={startCreateEventHandler}>Update Profile</Button>
 				{creating && (
-					<SimpleModal
+					<FormModal
 						header="Update Profile"
 						canCancel
 						canConfirm
@@ -179,7 +179,7 @@ const UserProfileInfo = (props) => {
 								/>
 							</form>
 						</div>
-					</SimpleModal>
+					</FormModal>
 				)}
 			</div>
 		</div>
