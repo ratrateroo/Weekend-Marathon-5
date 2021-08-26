@@ -2,6 +2,10 @@ import React from 'react';
 
 import Button from '../FormElements/Button';
 
+import Input from '../FormElements/Input';
+
+import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../util/validators';
+
 import './FormModal.css';
 
 const modal = (props) => (
@@ -12,9 +16,7 @@ const modal = (props) => (
 		<div>
 			<div className={`c-modal__content-`}>
 				<div className="c-form">
-					<form
-						onSubmit={updateProfileSubmitHandler}
-						className="c-form__body">
+					<form onSubmit={props.onSubmit} className="c-form__body">
 						<Input
 							element="input"
 							id="username"
@@ -23,7 +25,7 @@ const modal = (props) => (
 							label="Username:"
 							validators={[VALIDATOR_REQUIRE()]}
 							errorText="Please enter a valid username."
-							onInput={inputHandler}
+							onInput={props.onInput}
 						/>
 
 						<Input
@@ -34,7 +36,7 @@ const modal = (props) => (
 							label="Email:"
 							validators={[VALIDATOR_REQUIRE()]}
 							errorText="Please enter a valid email."
-							onInput={inputHandler}
+							onInput={props.onInput}
 						/>
 
 						<Input
@@ -45,7 +47,7 @@ const modal = (props) => (
 							label="Password:"
 							validators={[VALIDATOR_MINLENGTH(5)]}
 							errorText="Please enter a valid password with a minimum of 5 characters."
-							onInput={inputHandler}
+							onInput={props.onInput}
 						/>
 
 						<Input
@@ -56,7 +58,7 @@ const modal = (props) => (
 							label="First Name:"
 							validators={[VALIDATOR_REQUIRE()]}
 							errorText="Please enter a valid firstname."
-							onInput={inputHandler}
+							onInput={props.onInput}
 						/>
 
 						<Input
@@ -67,7 +69,7 @@ const modal = (props) => (
 							label="Middle Name:"
 							validators={[VALIDATOR_REQUIRE()]}
 							errorText="Please enter a valid middlename."
-							onInput={inputHandler}
+							onInput={props.onInput}
 						/>
 
 						<Input
@@ -78,7 +80,7 @@ const modal = (props) => (
 							label="Last Name:"
 							validators={[VALIDATOR_REQUIRE()]}
 							errorText="Please enter a valid lastname."
-							onInput={inputHandler}
+							onInput={props.onInput}
 						/>
 					</form>
 				</div>
