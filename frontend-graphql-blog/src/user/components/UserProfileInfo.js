@@ -3,13 +3,9 @@ import React, { useState } from 'react';
 import './UserProfileInfo.css';
 import dummy_image from '../../Images/user_dummy.png';
 import Button from '../../shared/components/FormElements/Button';
-import Input from '../../shared/components/FormElements/Input';
-import SimpleModal from '../../shared/components/UIElements/SimpleModal';
+
 import FormModal from '../../shared/components/UIElements/FormModal';
-import {
-	VALIDATOR_REQUIRE,
-	VALIDATOR_MINLENGTH,
-} from '../../shared/util/validators';
+
 import { useForm } from '../../shared/hooks/form-hook';
 const UserProfileInfo = (props) => {
 	const [creating, setCreating] = useState(false);
