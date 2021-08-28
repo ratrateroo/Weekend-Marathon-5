@@ -4,7 +4,7 @@ import './UserProfileInfo.css';
 import dummy_image from '../../Images/user_dummy.png';
 import Button from '../../shared/components/FormElements/Button';
 
-import FormModal from '../../shared/components/UIElements/FormModal';
+import UpdateModal from '../../shared/components/UIElements/UpdateModal';
 
 import { useForm } from '../../shared/hooks/form-hook';
 const UserProfileInfo = (props) => {
@@ -87,7 +87,7 @@ const UserProfileInfo = (props) => {
 				</ul>
 				<Button onClick={startCreateEventHandler}>Update Profile</Button>
 				{creating && (
-					<FormModal
+					<UpdateModal
 						header="Update Profile"
 						canCancel
 						canConfirm
@@ -103,7 +103,7 @@ const UserProfileInfo = (props) => {
 						// 		</Button>
 						// 	</React.Fragment>
 						// }
-					></FormModal>
+					></UpdateModal>
 				)}
 			</div>
 		</div>
