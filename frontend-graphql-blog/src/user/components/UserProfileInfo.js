@@ -64,18 +64,11 @@ const UserProfileInfo = (props) => {
 				lastname: formState.inputs.lastname.value,
 			}),
 		});
-		console.log(formState.inputs);
 	};
 
 	return (
 		<div className="c-user-profile">
 			<div className="c-user-profile__image">
-				{/* <img
-					className="c-user-profile__image-pic"
-					src={props.image}
-					alt={props.name}
-				/> */}
-
 				<img
 					className="c-user-profile__image-pic"
 					src={dummy_image}
