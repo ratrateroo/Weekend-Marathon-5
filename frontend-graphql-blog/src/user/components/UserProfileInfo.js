@@ -9,9 +9,14 @@ import UpdateModal from '../../shared/components/UIElements/UpdateModal';
 import { useForm } from '../../shared/hooks/form-hook';
 const UserProfileInfo = (props) => {
 	const [creating, setCreating] = useState(false);
+	const [changeImage, setChangeImage] = useState(false);
 
 	const startCreateEventHandler = () => {
 		setCreating(!creating);
+	};
+
+	const startChangeImageHandler = () => {
+		setChangeImage(!changeImage);
 	};
 
 	const cancelCreateEventHandler = () => {
@@ -74,6 +79,7 @@ const UserProfileInfo = (props) => {
 					src={dummy_image}
 					alt={props.username}
 				/>
+				<Button onClick={startCreateEventHandler}>Change Image</Button>
 			</div>
 
 			<div className="c-user-profile__info">
