@@ -71,7 +71,9 @@ const UserProfileInfo = (props) => {
 		});
 	};
 
-	const updateProfileImageHandler = () => {};
+	const updateProfileImageHandler = () => {
+		console.log('Update Profile Image');
+	};
 
 	return (
 		<div className="c-user-profile">
