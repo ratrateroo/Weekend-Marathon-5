@@ -71,6 +71,8 @@ const UserProfileInfo = (props) => {
 		});
 	};
 
+	const updateProfileImageHandler = () => {};
+
 	return (
 		<div className="c-user-profile">
 			<div className="c-user-profile__image">
@@ -79,7 +81,15 @@ const UserProfileInfo = (props) => {
 					src={dummy_image}
 					alt={props.username}
 				/>
-				<Button onClick={startCreateEventHandler}>Change Image</Button>
+				<Button onClick={startChangeImageHandler}>Change Image</Button>
+				{changeImage && (
+					<UpdateModal
+						header="Update Profile Picture"
+						canCancel
+						canConfirm
+						onCancel={cancelCreateEventHandler}
+						onConfirm={updateProfileImageHandler}></UpdateModal>
+				)}
 			</div>
 
 			<div className="c-user-profile__info">
