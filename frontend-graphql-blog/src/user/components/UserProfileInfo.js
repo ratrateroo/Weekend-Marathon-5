@@ -8,11 +8,11 @@ import UpdateModal from '../../shared/components/UIElements/UpdateModal';
 
 import { useForm } from '../../shared/hooks/form-hook';
 const UserProfileInfo = (props) => {
-	const [creating, setCreating] = useState(false);
+	const [updating, setUpdating] = useState(false);
 	const [changeImage, setChangeImage] = useState(false);
 
 	const startCreateEventHandler = () => {
-		setCreating(!creating);
+		setUpdating(!updating);
 	};
 
 	const startChangeImageHandler = () => {
@@ -20,7 +20,7 @@ const UserProfileInfo = (props) => {
 	};
 
 	const cancelCreateEventHandler = () => {
-		setCreating(!creating);
+		setUpdating(!updating);
 	};
 
 	const [formState, inputHandler] = useForm(
@@ -112,7 +112,7 @@ const UserProfileInfo = (props) => {
 					</li>
 				</ul>
 				<Button onClick={startCreateEventHandler}>Update Profile</Button>
-				{creating && (
+				{updating && (
 					<UpdateModal
 						header="Update Profile"
 						canCancel
