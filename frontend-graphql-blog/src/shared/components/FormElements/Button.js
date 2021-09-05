@@ -5,7 +5,11 @@ import './Button.css';
 
 const Button = (props) => {
 	if (props.href) {
-		return <a className="c-form-button__link">{props.children}</a>;
+		return (
+			<a className="c-form-button__link" href={props.href}>
+				{props.children}
+			</a>
+		);
 	}
 	if (props.to) {
 		return (
