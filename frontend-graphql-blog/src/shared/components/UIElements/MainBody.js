@@ -10,21 +10,9 @@ const MainBody = (props) => {
 	const openModalHandler = () => {
 		setShowModal(true);
 	};
-	const closeModalHandler = () => {
-		setShowModal(false);
-	};
 
 	return (
 		<React.Fragment>
-			{/* <Modal
-				show={showModal}
-				onCancel={closeModalHandler}
-				header="Header Part"
-				footer={<Button onClick={closeModalHandler}>Close</Button>}>
-				<div>
-					<h2>Modal</h2>
-				</div>
-			</Modal> */}
 			<main className="o-main-area">
 				<section className="o-section-container">
 					<div className="o-page-heading">
