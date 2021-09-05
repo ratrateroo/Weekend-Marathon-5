@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import Button from '../FormElements/Button';
-//import Modal from './Modal';
 import './MainBody.css';
 
 const MainBody = (props) => {

@@ -120,16 +120,18 @@ const UserBlogList = (props) => {
 
 	return (
 		<React.Fragment>
-			<SimpleModal
-				canConfirm
-				canCancel
-				onConfirm={cancelDeleteHandler}
-				onCancel={cancelDeleteHandler}
-				header="Confirm Delete">
-				<div>
-					<h2>Modal</h2>
-				</div>
-			</SimpleModal>
+			{showConfirmModal && (
+				<SimpleModal
+					canConfirm
+					canCancel
+					onConfirm={cancelDeleteHandler}
+					onCancel={cancelDeleteHandler}
+					header="Confirm Delete">
+					<div>
+						<h2>Modal</h2>
+					</div>
+				</SimpleModal>
+			)}
 			<div className="c-blogs-list">
 				<div role="grid" className="c-blogs-table">
 					<div role="row" className="c-blogs-table__header">
