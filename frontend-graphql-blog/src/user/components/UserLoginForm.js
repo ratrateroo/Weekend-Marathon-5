@@ -61,6 +61,7 @@ const UserLoginForm = () => {
 				if (res.status !== 200 && res.status !== 201) {
 					throw new Error('Failed!');
 				}
+				setIsLoggedInMode((prevMode) => !prevMode);
 				return res.json();
 			})
 			.then((resData) => {
@@ -74,7 +75,7 @@ const UserLoginForm = () => {
 		auth.login();
 	};
 
-	return (
+	return !isLoggedInMode ? (
 		<div className="c-form">
 			<form action="" className="c-form__body" onSubmit={loginSubmitHandler}>
 				<Input
@@ -103,6 +104,14 @@ const UserLoginForm = () => {
 					<Button submit disabled={!formState.isValid}>
 						Log In
 					</Button>
+				</div>
+			</form>
+		</div>
+	) : (
+		<div className="c-form">
+			<form action="" className="c-form__body" onSubmit={loginSubmitHandler}>
+				<div className="c-form-button">
+					<Button button>Log Out</Button>
 				</div>
 			</form>
 		</div>
