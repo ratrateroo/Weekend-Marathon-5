@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Input from '../FormElements/Input';
 
@@ -37,6 +37,9 @@ const UpdateProfileForm = (props) => {
 		},
 		false
 	);
+	useEffect(() => {
+		props.onChange(formState);
+	}, [formState]);
 
 	return (
 		<div className="c-form">
