@@ -6,7 +6,7 @@ import UpdateProfileForm from './UpdateProfileForm';
 
 import './UpdateModal.css';
 
-const modal = (props) => {
+const Modal = (props) => {
 	const [formValid, setFormValid] = useState(false);
 
 	return (
@@ -17,7 +17,7 @@ const modal = (props) => {
 			<div>
 				<div className={`c-modal__content-`}>
 					<UpdateProfileForm
-						onChange={(validity) => setFormValid(validity)}
+						onChange={(validity) => console.log('We get: ' + validity)}
 					/>
 				</div>
 				<footer className={`c-modal__footer`}>
@@ -31,9 +31,11 @@ const modal = (props) => {
 
 					{props.canConfirm && (
 						<div className="c-form-button">
-							<Button submit onClick={props.onConfirm}>
-								Ok
-							</Button>
+							{formValid && (
+								<Button submit onClick={props.onConfirm}>
+									Ok
+								</Button>
+							)}
 						</div>
 					)}
 				</footer>
@@ -42,4 +44,4 @@ const modal = (props) => {
 	);
 };
 
-export default modal;
+export default Modal;

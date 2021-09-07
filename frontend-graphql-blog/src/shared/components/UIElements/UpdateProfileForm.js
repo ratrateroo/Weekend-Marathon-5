@@ -38,7 +38,8 @@ const UpdateProfileForm = (props) => {
 		false
 	);
 	useEffect(() => {
-		props.onChange(formState);
+		props.onChange(formState.isValid);
+		console.log(formState);
 	}, [formState]);
 
 	return (
