@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Button from '../FormElements/Button';
 
@@ -6,34 +6,40 @@ import UpdateProfileForm from './UpdateProfileForm';
 
 import './UpdateModal.css';
 
-const modal = (props) => (
-	<div className={`c-modal`} style={props.style}>
-		<header className={`c-modal__header`}>
-			<h2 className={`c-modal__title`}>{props.title}</h2>
-		</header>
-		<div>
-			<div className={`c-modal__content-`}>
-				<UpdateProfileForm />
-			</div>
-			<footer className={`c-modal__footer`}>
-				{props.canCancel && (
-					<div className="c-form-button">
-						<Button cancel onClick={props.onCancel}>
-							Cancel
-						</Button>
-					</div>
-				)}
+const modal = (props) => {
+	const [formValid, setFormValid] = useState(false);
 
-				{props.canConfirm && (
-					<div className="c-form-button">
-						<Button submit onClick={props.onConfirm}>
-							Ok
-						</Button>
-					</div>
-				)}
-			</footer>
+	return (
+		<div className={`c-modal`} style={props.style}>
+			<header className={`c-modal__header`}>
+				<h2 className={`c-modal__title`}>{props.title}</h2>
+			</header>
+			<div>
+				<div className={`c-modal__content-`}>
+					<UpdateProfileForm
+						onChange={(validity) => setFormValid(validity)}
+					/>
+				</div>
+				<footer className={`c-modal__footer`}>
+					{props.canCancel && (
+						<div className="c-form-button">
+							<Button cancel onClick={props.onCancel}>
+								Cancel
+							</Button>
+						</div>
+					)}
+
+					{props.canConfirm && (
+						<div className="c-form-button">
+							<Button submit onClick={props.onConfirm}>
+								Ok
+							</Button>
+						</div>
+					)}
+				</footer>
+			</div>
 		</div>
-	</div>
-);
+	);
+};
 
 export default modal;
