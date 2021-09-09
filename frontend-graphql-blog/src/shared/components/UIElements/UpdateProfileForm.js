@@ -37,10 +37,10 @@ const UpdateProfileForm = (props) => {
 		},
 		false
 	);
-	useEffect(() => {
-		props.onChange(formState.isValid);
-		console.log(formState);
-	}, [formState]);
+	// useEffect(() => {
+	// 	props.onChange(formState.isValid);
+	// 	console.log(formState);
+	// }, [formState]);
 
 	return (
 		<div className="c-form">
