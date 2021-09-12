@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import BoilingVerdict from './BoilingVerdict';
+import TemperatureInput from './TemperatureInput';
 
 const Calculator = (props) => {
 	const [temperature, setTemperature] = useState('');
@@ -9,11 +9,10 @@ const Calculator = (props) => {
 		setTemperature({ temperature: e.target.value });
 	};
 	return (
-		<fieldset>
-			<legend>Enter temperature in Celsius:</legend>
-			<input value={temperature} onChange={handleChange} />
-			<BoilingVerdict celsius={parseFloat(temperature)} />
-		</fieldset>
+		<div>
+			<TemperatureInput scale="c" />
+			<TemperatureInput scale="f" />
+		</div>
 	);
 };
 
