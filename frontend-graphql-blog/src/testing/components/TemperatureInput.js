@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const scaleNames = {
 	c: 'Celsius',
@@ -6,15 +6,13 @@ const scaleNames = {
 };
 
 const TemperatureInput = (props) => {
-	const [temperature, setTemperature] = useState('');
-
-	handleChange = (e) => {
+	inputChangeHandler = (e) => {
 		setTemperature({ temperature: e.target.value });
 	};
 	return (
 		<fieldset>
 			<legend>Enter temperature in {scaleNames[scale]}:</legend>
-			<input value={temperature} onChange={this.handleChange} />
+			<input value={temperature} onChange={inputChangeHandler} />
 		</fieldset>
 	);
 };
