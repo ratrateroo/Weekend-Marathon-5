@@ -7,7 +7,7 @@ const scaleNames = {
 
 const TemperatureInput = (props) => {
 	inputChangeHandler = (e) => {
-		setTemperature({ temperature: e.target.value });
+		props.onTemperatureChange(e.target.value);
 	};
 	return (
 		<fieldset>

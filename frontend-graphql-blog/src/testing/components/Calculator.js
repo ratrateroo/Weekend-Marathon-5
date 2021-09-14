@@ -10,8 +10,8 @@ const Calculator = (props) => {
 	};
 	return (
 		<div>
-			<TemperatureInput scale="c" />
-			<TemperatureInput scale="f" />
+			<TemperatureInput scale="c" onTemperatureChange={handleChange} />
+			<TemperatureInput scale="f" onTemperatureChange={handleChange} />
 		</div>
 	);
 };
