@@ -9,12 +9,16 @@ const Calculator = (props) => {
 	handleChange = (e) => {
 		setTemperature({ temperature: e.target.value });
 	};
+	celsiusChangeHandler = (temperature) => {
+		setScale('c');
+		setTemperature(temperature);
+	};
 	return (
 		<div>
 			<TemperatureInput
 				scale="c"
 				temperature={temperature}
-				onTemperatureChange={handleChange}
+				onTemperatureChange={celsiusChangeHandler}
 			/>
 			<TemperatureInput
 				scale="f"
