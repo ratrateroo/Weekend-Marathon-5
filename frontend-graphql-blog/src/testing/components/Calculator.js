@@ -13,6 +13,11 @@ const Calculator = (props) => {
 		setScale('c');
 		setTemperature(temperature);
 	};
+
+	fahrenheitChangeHandler = (temperature) => {
+		setScale('f');
+		setTemperature(temperature);
+	};
 	return (
 		<div>
 			<TemperatureInput
@@ -23,7 +28,7 @@ const Calculator = (props) => {
 			<TemperatureInput
 				scale="f"
 				temperature={temperature}
-				onTemperatureChange={handleChange}
+				onTemperatureChange={fahrenheitChangeHandler}
 			/>
 		</div>
 	);
