@@ -20,14 +20,14 @@ const Calculator = (props) => {
 	handleChange = (e) => {
 		setTemperature({ temperature: e.target.value });
 	};
-	celsiusChangeHandler = (temperature) => {
+	celsiusChangeHandler = (celsius) => {
 		setScale('c');
-		setTemperature(temperature);
+		setTemperature(celsius);
 	};
 
-	fahrenheitChangeHandler = (temperature) => {
+	fahrenheitChangeHandler = (fahrenheit) => {
 		setScale('f');
-		setTemperature(temperature);
+		setTemperature(fahrenheit);
 	};
 	return (
 		<div>
