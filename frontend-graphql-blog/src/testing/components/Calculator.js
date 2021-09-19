@@ -8,6 +8,8 @@ import { toCelsius } from '../helpers/conversions';
 
 import { toFahrenheit } from '../helpers/conversions';
 
+import BoilingVerdict from './BoilingVerdict';
+
 const Calculator = (props) => {
 	const [temperature, setTemperature] = useState('');
 	const [scale, setScale] = useState('c');
@@ -41,6 +43,7 @@ const Calculator = (props) => {
 				temperature={temperature}
 				onTemperatureChange={fahrenheitChangeHandler}
 			/>
+			<BoilingVerdict celsius={parseFloat(celsius)} />
 		</div>
 	);
 };
