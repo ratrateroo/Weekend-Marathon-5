@@ -19,15 +19,15 @@ const Calculator = (props) => {
 	const fahrenheit =
 		scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
 
-	handleChange = (e) => {
+	const handleChange = (e) => {
 		setTemperature({ temperature: e.target.value });
 	};
-	celsiusChangeHandler = (celsius) => {
+	const celsiusChangeHandler = (celsius) => {
 		setScale('c');
 		setTemperature(celsius);
 	};
 
-	fahrenheitChangeHandler = (fahrenheit) => {
+	const fahrenheitChangeHandler = (fahrenheit) => {
 		setScale('f');
 		setTemperature(fahrenheit);
 	};
@@ -35,12 +35,12 @@ const Calculator = (props) => {
 		<div>
 			<TemperatureInput
 				scale="c"
-				temperature={temperature}
+				temperature={celsius}
 				onTemperatureChange={celsiusChangeHandler}
 			/>
 			<TemperatureInput
 				scale="f"
-				temperature={temperature}
+				temperature={fahrenheit}
 				onTemperatureChange={fahrenheitChangeHandler}
 			/>
 			<BoilingVerdict celsius={parseFloat(celsius)} />

@@ -6,13 +6,13 @@ const scaleNames = {
 };
 
 const TemperatureInput = (props) => {
-	inputChangeHandler = (e) => {
+	const inputChangeHandler = (e) => {
 		props.onTemperatureChange(e.target.value);
 	};
 	return (
 		<fieldset>
-			<legend>Enter temperature in {scaleNames[scale]}:</legend>
-			<input value={temperature} onChange={inputChangeHandler} />
+			<legend>Enter temperature in {scaleNames[props.scale]}:</legend>
+			<input value={props.temperature} onChange={inputChangeHandler} />
 		</fieldset>
 	);
 };
