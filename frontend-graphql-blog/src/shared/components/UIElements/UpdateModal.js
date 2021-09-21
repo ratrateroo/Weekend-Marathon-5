@@ -4,10 +4,60 @@ import Button from '../FormElements/Button';
 
 import UpdateProfileForm from './UpdateProfileForm';
 
+import { useForm } from '../../hooks/form-hook';
+
 import './UpdateModal.css';
 
 const Modal = (props) => {
 	const [formValid, setFormValid] = useState(false);
+
+	const [formState, inputHandler] = useForm(
+		{
+			username: {
+				value: '',
+				isValid: true,
+			},
+			email: {
+				value: '',
+				isValid: true,
+			},
+			password: {
+				value: '',
+				isValid: true,
+			},
+			firstname: {
+				value: '',
+				isValid: true,
+			},
+			middlename: {
+				value: '',
+				isValid: true,
+			},
+			lastname: {
+				value: '',
+				isValid: true,
+			},
+		},
+		false
+	);
+
+	const updateProfileHandler = async (event) => {
+		event.preventDefault();
+		fetch('http://localhost:5000/users/signup', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				username: formState.inputs.name.value,
+				email: formState.inputs.email.value,
+				password: formState.inputs.name.value,
+				firstname: formState.inputs.firstname.value,
+				middlename: formState.inputs.middlename.value,
+				lastname: formState.inputs.lastname.value,
+			}),
+		});
+	};
 
 	return (
 		<div className={`c-modal`} style={props.style}>

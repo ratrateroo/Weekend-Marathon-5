@@ -23,36 +23,6 @@ const UserProfileInfo = (props) => {
 		setUpdating(!updating);
 	};
 
-	const [formState, inputHandler] = useForm(
-		{
-			username: {
-				value: '',
-				isValid: true,
-			},
-			email: {
-				value: '',
-				isValid: true,
-			},
-			password: {
-				value: '',
-				isValid: true,
-			},
-			firstname: {
-				value: '',
-				isValid: true,
-			},
-			middlename: {
-				value: '',
-				isValid: true,
-			},
-			lastname: {
-				value: '',
-				isValid: true,
-			},
-		},
-		false
-	);
-
 	const updateProfileHandler = async (event) => {
 		event.preventDefault();
 		fetch('http://localhost:5000/users/signup', {
