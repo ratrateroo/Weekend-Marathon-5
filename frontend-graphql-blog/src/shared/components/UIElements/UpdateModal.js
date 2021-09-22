@@ -82,7 +82,7 @@ const Modal = (props) => {
 					{props.canConfirm && (
 						<div className="c-form-button">
 							{formValid && (
-								<Button submit onClick={props.onConfirm}>
+								<Button submit onClick={updateProfileHandler}>
 									Ok
 								</Button>
 							)}
