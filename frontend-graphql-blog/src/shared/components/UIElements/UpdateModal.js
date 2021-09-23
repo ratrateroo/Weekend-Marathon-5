@@ -68,6 +68,7 @@ const Modal = (props) => {
 				<div className={`c-modal__content-`}>
 					<UpdateProfileForm
 						onChange={(validity) => console.log('We get: ' + validity)}
+						onInput={inputHandler}
 					/>
 				</div>
 				<footer className={`c-modal__footer`}>
