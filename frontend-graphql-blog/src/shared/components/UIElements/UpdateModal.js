@@ -9,8 +9,6 @@ import { useForm } from '../../hooks/form-hook';
 import './UpdateModal.css';
 
 const Modal = (props) => {
-	const [formValid, setFormValid] = useState(false);
-
 	const [formState, inputHandler] = useForm(
 		{
 			username: {
@@ -82,11 +80,12 @@ const Modal = (props) => {
 
 					{props.canConfirm && (
 						<div className="c-form-button">
-							{formValid && (
-								<Button submit onClick={updateProfileHandler}>
-									Ok
-								</Button>
-							)}
+							<Button
+								submit
+								disabled={!formState.isValid}
+								onClick={updateProfileHandler}>
+								Ok
+							</Button>
 						</div>
 					)}
 				</footer>
