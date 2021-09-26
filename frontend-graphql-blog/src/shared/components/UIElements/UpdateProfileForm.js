@@ -3,7 +3,6 @@ import React from 'react';
 import Input from '../FormElements/Input';
 
 import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../util/validators';
-import { useForm } from '../../hooks/form-hook';
 
 import './UpdateProfileForm.css';
 
