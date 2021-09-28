@@ -6,7 +6,6 @@ import Button from '../../shared/components/FormElements/Button';
 
 import UpdateModal from '../../shared/components/UIElements/UpdateModal';
 
-import { useForm } from '../../shared/hooks/form-hook';
 const UserProfileInfo = (props) => {
 	const [updating, setUpdating] = useState(false);
 	const [changeImage, setChangeImage] = useState(false);
