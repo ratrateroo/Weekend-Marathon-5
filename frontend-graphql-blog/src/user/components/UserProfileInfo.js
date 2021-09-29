@@ -22,24 +22,6 @@ const UserProfileInfo = (props) => {
 		setUpdating(!updating);
 	};
 
-	// const updateProfileHandler = async (event) => {
-	// 	event.preventDefault();
-	// 	fetch('http://localhost:5000/users/signup', {
-	// 		method: 'POST',
-	// 		headers: {
-	// 			'Content-Type': 'application/json',
-	// 		},
-	// 		body: JSON.stringify({
-	// 			username: formState.inputs.name.value,
-	// 			email: formState.inputs.email.value,
-	// 			password: formState.inputs.name.value,
-	// 			firstname: formState.inputs.firstname.value,
-	// 			middlename: formState.inputs.middlename.value,
-	// 			lastname: formState.inputs.lastname.value,
-	// 		}),
-	// 	});
-	// };
-
 	const updateProfileImageHandler = () => {
 		console.log('Update Profile Image');
 	};
@@ -85,20 +67,7 @@ const UserProfileInfo = (props) => {
 					<UpdateModal
 						header="Update Profile"
 						canCancel
-						canConfirm
-						// onCancel={cancelCreateEventHandler}
-						// onConfirm={updateProfileHandler}
-						// footer={
-						// 	<React.Fragment>
-						// 		<Button submit onClick={console.log('Clicked Update')}>
-						// 			Update
-						// 		</Button>
-						// 		<Button cancel onClick={cancelCreateEventHandler}>
-						// 			Cancel
-						// 		</Button>
-						// 	</React.Fragment>
-						// }
-					></UpdateModal>
+						canConfirm></UpdateModal>
 				)}
 			</div>
 		</div>
