@@ -19,9 +19,6 @@ const Calculator = (props) => {
 	const fahrenheit =
 		scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
 
-	const handleChange = (e) => {
-		setTemperature({ temperature: e.target.value });
-	};
 	const celsiusChangeHandler = (celsius) => {
 		setScale('c');
 		setTemperature(celsius);
