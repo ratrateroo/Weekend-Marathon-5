@@ -22,7 +22,7 @@ import UserBlogs from './user/pages/UserBlogs';
 import CreateBlog from './blogs/pages/CreateBlog';
 import UpdateBlog from './blogs/pages/UpdateBlog';
 
-import Testing from './testing/pages/Testing';
+// import Testing from './testing/pages/Testing';
 
 const App = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -73,9 +73,9 @@ const App = () => {
 				<UserLogin title="User Login" />
 			</Route>
 
-			<Route path="/testing/page" exact>
+			{/* <Route path="/testing/page" exact>
 				<Testing title="Testing" />
-			</Route>
+			</Route> */}
 			{!isLoggedIn && (
 				<Route path="/signup" exact>
 					<UserSignupForm title="User Signup" />
