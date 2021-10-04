@@ -47,9 +47,9 @@ const App = () => {
 				<Blogs title="Blogs" />
 			</Route>
 
-			<Route path="/users" exact>
+			{/* <Route path="/users" exact>
 				<UsersList title="Users" />
-			</Route>
+			</Route> */}
 			<Route path="/blogs/:uid" exact>
 				<UserBlogs title="User Blogs" />
 			</Route>
