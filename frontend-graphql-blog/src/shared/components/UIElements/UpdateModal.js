@@ -4,6 +4,8 @@ import Button from '../FormElements/Button';
 
 import UpdateProfileForm from './UpdateProfileForm';
 
+const userId = useParams().userId;
+
 import { useForm } from '../../hooks/form-hook';
 
 import './UpdateModal.css';
