@@ -56,10 +56,6 @@ input BlogInput {
     
 }
 
-
-
-
-
 type RootQuery {
     users: [User!]!
     blogs: [Blog!]!
