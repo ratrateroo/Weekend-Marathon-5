@@ -33,21 +33,18 @@ const UserLoginForm = () => {
 
 		const requestBody = {
 			query: `
-			mutation {
-				createUser(userInput: {
-					username: "${formState.inputs.username.value}",
-					email: "${formState.inputs.email.value}",
-					password: "${formState.inputs.password.value}",
-					firstname: "${formState.inputs.firstname.value}",
-					middlename: "${formState.inputs.middlename.value}",
-					lastname: "${formState.inputs.lastname.value}",
-
-				}) {
-					_id
-					username
-				}
-			}
-			`,
+        query Login($email: String!, $password: String!) {
+          login(email: $email, password: $password) {
+            userId
+            token
+            tokenExpiration
+          }
+        }
+      `,
+			variables: {
+				email: email,
+				password: password,
+			},
 		};
 
 		fetch('http://localhost:8000/graphql', {
