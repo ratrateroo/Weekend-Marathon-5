@@ -46,7 +46,6 @@ module.exports = {
 			);
 
 			return {
-				...result._doc,
 				userId: result.id,
 				token: token,
 				tokenExpiration: 1,

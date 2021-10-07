@@ -58,8 +58,9 @@ const UserSignupForm = (props) => {
 					lastname: "${formState.inputs.lastname.value}",
 
 				}) {
-					_id
-					username
+					userId
+					token
+					tokenExpiration
 				}
 			}
 			`,

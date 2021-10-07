@@ -70,7 +70,7 @@ type RootQuery {
 }
 
 type RootMutation {
-    createUser(userInput: UserInput): User
+    createUser(userInput: UserInput): AuthData!
     createBlog(blogInput: BlogInput): Blog
     addFriend(friendId: ID!): Friend!
     removeFriend(friendId: ID!): Friend!
