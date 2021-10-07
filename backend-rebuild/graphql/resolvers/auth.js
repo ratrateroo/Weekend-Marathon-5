@@ -35,7 +35,22 @@ module.exports = {
 				lastname: args.userInput.lastname,
 			});
 			const result = await user.save();
-			return { ...result._doc, password: null, _id: result.id };
+			//return { ...result._doc, password: null, _id: result.id };
+
+			const token = jwt.sign(
+				{ userId: result.id, email: user.email },
+				'secretkeyforhashing',
+				{
+					expiresIn: '1h',
+				}
+			);
+
+			return {
+				...result._doc,
+				userId: result.id,
+				token: token,
+				tokenExpiration: 1,
+			};
 		} catch (err) {
 			throw err;
 		}
