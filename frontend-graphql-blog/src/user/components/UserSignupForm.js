@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import './UserSignupForm.css';
 import Input from '../../shared/components/FormElements/Input';
@@ -8,8 +8,11 @@ import {
 	VALIDATOR_MINLENGTH,
 } from '../../shared/util/validators';
 import { useForm } from '../../shared/hooks/form-hook';
+import { AuthContext } from '../../shared/context/auth-context';
 
 const UserSignupForm = (props) => {
+	const auth = useContext(AuthContext);
+
 	const [formState, inputHandler] = useForm(
 		{
 			username: {
