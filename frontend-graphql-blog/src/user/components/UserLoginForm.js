@@ -12,7 +12,7 @@ import { AuthContext } from '../../shared/context/auth-context';
 const UserLoginForm = () => {
 	const auth = useContext(AuthContext);
 
-	const [isLoggedInMode, setIsLoggedInMode] = useState(true);
+	const [isLoggedInMode, setIsLoggedInMode] = useState(false);
 
 	const [formState, inputHandler] = useForm(
 		{
@@ -41,10 +41,10 @@ const UserLoginForm = () => {
           }
         }
       `,
-			variables: {
-				email: email,
-				password: password,
-			},
+			// variables: {
+			// 	email: email,
+			// 	password: password,
+			// },
 		};
 
 		fetch('http://localhost:8000/graphql', {

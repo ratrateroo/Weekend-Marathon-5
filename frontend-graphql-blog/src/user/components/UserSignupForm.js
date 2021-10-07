@@ -62,6 +62,40 @@ const UserSignupForm = (props) => {
 			`,
 		};
 
+		//OTHER WAY TO CREATE REQUEST BODY
+		// const requestBody = {
+		// 	query: `
+		//   mutation CreateUser(
+		// 	  $username: String!,
+		// 	  $email: String!,
+		// 	  $password: String!
+		// 	  $firstname: String!,
+		// 	  $middlename: String!,
+		// 	  $lastname: String!,
+		// 	  ) {
+		//     createUser(userInput: {
+		// 		username: $username,
+		// 		email: $email,
+		// 		password: $password,
+		// 		firstname: $firstname,
+		// 		middlename: $middlename,
+		// 		lastname: $lastname
+		// 		}) {
+		//       _id
+		//       username
+		//     }
+		//   }
+		// `,
+		// 	variables: {
+		// 		username: formState.inputs.username.value,
+		// 		email: formState.inputs.email.value,
+		// 		password: formState.inputs.password.value,
+		// 		firstname: formState.inputs.firstname.value,
+		// 		middlename: formState.inputs.middlename.value,
+		// 		lastname: formState.inputs.lastname.value,
+		// 	},
+		// };
+
 		fetch('http://localhost:8000/graphql', {
 			method: 'POST',
 			headers: {
