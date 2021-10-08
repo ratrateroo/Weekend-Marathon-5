@@ -62,7 +62,13 @@ const UserLoginForm = () => {
 				return res.json();
 			})
 			.then((resData) => {
-				console.log(resData);
+				if (resData.data.login.token) {
+					auth.login(
+						resData.data.login.token,
+						resData.data.login.userId,
+						resData.data.login.tokenExpiration
+					);
+				}
 			})
 			.catch((err) => {
 				console.log(err);
