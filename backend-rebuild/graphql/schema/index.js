@@ -64,7 +64,7 @@ type RootQuery {
     users: [User!]!
     blogs: [Blog!]!
     friends: [Friend!]!
-    login(email: String!, password: String!): AuthData!
+    login(username: String!, password: String!): AuthData!
     
     
 }
