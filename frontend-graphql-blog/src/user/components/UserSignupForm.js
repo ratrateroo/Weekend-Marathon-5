@@ -115,6 +115,13 @@ const UserSignupForm = (props) => {
 			})
 			.then((resData) => {
 				console.log(resData);
+				if (resData.data.createUser.token) {
+					auth.login(
+						resData.data.createUser.token,
+						resData.data.createUser.userId,
+						resData.data.createUser.tokenExpiration
+					);
+				}
 			})
 			.catch((err) => {
 				console.log(err);

@@ -46,6 +46,7 @@ const App = () => {
 			<Route path="/" exact>
 				<Blogs title="Blogs" />
 			</Route>
+			{token && <Redirect from="/signup" to="/" exact />}
 
 			{/* <Route path="/users" exact>
 				<UsersList title="Users" />
