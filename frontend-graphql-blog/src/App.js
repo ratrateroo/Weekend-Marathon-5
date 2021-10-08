@@ -22,8 +22,6 @@ import UserBlogs from './user/pages/UserBlogs';
 import CreateBlog from './blogs/pages/CreateBlog';
 import UpdateBlog from './blogs/pages/UpdateBlog';
 
-// import Testing from './testing/pages/Testing';
-
 const App = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [token, setToken] = useState(null);
@@ -74,9 +72,6 @@ const App = () => {
 				<UserLogin title="User Login" />
 			</Route>
 
-			{/* <Route path="/testing/page" exact>
-				<Testing title="Testing" />
-			</Route> */}
 			{!isLoggedIn && (
 				<Route path="/signup" exact>
 					<UserSignupForm title="User Signup" />
