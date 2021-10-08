@@ -14,7 +14,7 @@ const BlogItem = (props) => {
 					/>
 				</div>
 
-				<div class="c-post__details">
+				<div className="c-post__details">
 					<h2 className="c-post__title">{props.title}</h2>
 					<h3 className="c-post__author">{props.author}</h3>
 				</div>
