@@ -33,18 +33,18 @@ const UserLoginForm = () => {
 
 		const requestBody = {
 			query: `
-        query Login($email: String!, $password: String!) {
-          login(email: $email, password: $password) {
+        query Login($username: String!, $password: String!) {
+          login(username: $username, password: $password) {
             userId
             token
             tokenExpiration
           }
         }
       `,
-			// variables: {
-			// 	email: email,
-			// 	password: password,
-			// },
+			variables: {
+				username: username,
+				password: password,
+			},
 		};
 
 		fetch('http://localhost:8000/graphql', {
