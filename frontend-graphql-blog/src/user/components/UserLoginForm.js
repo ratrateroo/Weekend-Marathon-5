@@ -42,8 +42,8 @@ const UserLoginForm = () => {
         }
       `,
 			variables: {
-				username: username,
-				password: password,
+				username: formState.inputs.username.value,
+				password: formState.inputs.password.value,
 			},
 		};
 
