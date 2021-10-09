@@ -6,7 +6,7 @@ import UsersList from '../components/UsersList';
 
 const items = [1, 2, 3];
 
-const UserList = (props) => {
+const Users = (props) => {
 	return (
 		<MainBody title={props.title}>
 			<UsersList items={items} />
@@ -14,4 +14,4 @@ const UserList = (props) => {
 	);
 };
 
-export default UserList;
+export default Users;

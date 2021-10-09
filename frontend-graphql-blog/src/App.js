@@ -13,7 +13,7 @@ import { AuthContext } from './shared/context/auth-context';
 
 import UserLogin from './user/pages/UserLogin';
 import UserSignupForm from './user/components/UserSignupForm';
-import UserList from './user/pages/UserList';
+
 import UserProfile from './user/pages/UserProfile';
 
 import Blog from './blogs/pages/Blog';
@@ -21,6 +21,7 @@ import Blogs from './blogs/pages/Blogs';
 import UserBlogs from './user/pages/UserBlogs';
 import CreateBlog from './blogs/pages/CreateBlog';
 import UpdateBlog from './blogs/pages/UpdateBlog';
+import Users from './user/pages/Users';
 
 const App = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -49,7 +50,7 @@ const App = () => {
 			{/* {token && <Redirect to="/" />} */}
 			{token && (
 				<Route path="/users" exact>
-					<UserList title="Users" />
+					<Users title="Users" />
 				</Route>
 			)}
 
