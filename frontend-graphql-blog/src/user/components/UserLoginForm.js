@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 
 import './UserLoginForm.css';
 import Input from '../../shared/components/FormElements/Input';
@@ -11,8 +11,6 @@ import { useForm } from '../../shared/hooks/form-hook';
 import { AuthContext } from '../../shared/context/auth-context';
 const UserLoginForm = () => {
 	const auth = useContext(AuthContext);
-
-	const [isLoggedInMode, setIsLoggedInMode] = useState(false);
 
 	const [formState, inputHandler] = useForm(
 		{
@@ -58,7 +56,7 @@ const UserLoginForm = () => {
 				if (res.status !== 200 && res.status !== 201) {
 					throw new Error('Failed!');
 				}
-				setIsLoggedInMode((prevMode) => !prevMode);
+
 				return res.json();
 			})
 			.then((resData) => {

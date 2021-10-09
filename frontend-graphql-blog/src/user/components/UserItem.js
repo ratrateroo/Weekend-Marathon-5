@@ -12,7 +12,7 @@ const UserItem = (props) => {
 						<img
 							className="c-user__avatar-pic"
 							src={props.image}
-							alt={props.name}
+							alt={props.username}
 						/>
 					</div>
 
