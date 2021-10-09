@@ -13,7 +13,7 @@ import { AuthContext } from './shared/context/auth-context';
 
 import UserLogin from './user/pages/UserLogin';
 import UserSignupForm from './user/components/UserSignupForm';
-import UsersList from './user/components/UsersList';
+import UserList from './user/pages/UserList';
 import UserProfile from './user/pages/UserProfile';
 
 import Blog from './blogs/pages/Blog';
@@ -46,34 +46,31 @@ const App = () => {
 			</Route>
 			{/* {token && <Redirect from="/signup" to="/" exact />}
 			{token && <Redirect from="/login" to="/" exact />} */}
-			{token && <Redirect to="/" />}
+			{/* {token && <Redirect to="/" />} */}
+			{token && (
+				<Route path="/users" exact>
+					<UserList title="Users" />
+				</Route>
+			)}
 
-			{/* <Route path="/users" exact>
-				<UsersList title="Users" />
-			</Route> */}
 			<Route path="/blogs/:uid" exact>
 				<UserBlogs title="User Blogs" />
 			</Route>
-
 			<Route path="/blog/new" exact>
 				<CreateBlog title="Create Blog" />
 			</Route>
-
 			<Route path="/blog/update/:bid" exact>
 				<UpdateBlog title="Update Blog" />
 			</Route>
-
 			<Route path="/blog/:bid" exact>
 				<Blog title="<Username>'s Blog" />
 			</Route>
-
 			<Route path="/profile/:uid" exact>
 				<UserProfile title="User Profile" />
 			</Route>
 			<Route path="/login" exact>
 				<UserLogin title="User Login" />
 			</Route>
-
 			{!isLoggedIn && (
 				<Route path="/signup" exact>
 					<UserSignupForm title="User Signup" />

@@ -4,10 +4,12 @@ import MainBody from '../../shared/components/UIElements/MainBody';
 
 import UsersList from '../components/UsersList';
 
+const items = [1, 2, 3];
+
 const UserList = (props) => {
 	return (
 		<MainBody title={props.title}>
-			<UsersList />
+			<UsersList items={items} />
 		</MainBody>
 	);
 };
