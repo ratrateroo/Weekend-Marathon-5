@@ -74,11 +74,11 @@ const UserLoginForm = () => {
 				console.log(err);
 			});
 
-		console.log(formState.inputs);
-		auth.login();
+		console.log('Logging In');
+		// auth.login();
 	};
 
-	return !isLoggedInMode ? (
+	return (
 		<div className="c-form">
 			<form action="" className="c-form__body" onSubmit={loginSubmitHandler}>
 				<Input
@@ -107,14 +107,6 @@ const UserLoginForm = () => {
 					<Button submit disabled={!formState.isValid}>
 						Log In
 					</Button>
-				</div>
-			</form>
-		</div>
-	) : (
-		<div className="c-form">
-			<form action="" className="c-form__body" onSubmit={loginSubmitHandler}>
-				<div className="c-form-button">
-					<Button button>Log Out</Button>
 				</div>
 			</form>
 		</div>
