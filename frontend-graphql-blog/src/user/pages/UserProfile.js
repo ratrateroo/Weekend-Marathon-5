@@ -121,9 +121,9 @@ const UserProfile = (props) => {
 			}
 		};
 		fetchUsers();
-	}, [auth.token]);
+	}, [auth.token, userId]);
 
-	const loadedUser = USERS.filter((user) => user._id === userId);
+	//const loadedUser = USERS.filter((user) => user._id === userId);
 	// const loadedUser = USERS.find(user => user.id === userId);
 
 	return (
