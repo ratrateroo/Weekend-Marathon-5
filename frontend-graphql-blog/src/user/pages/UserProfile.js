@@ -111,7 +111,7 @@ const UserProfile = (props) => {
 					.then((resData) => {
 						console.log(resData.data);
 						console.log(resData.data.user);
-						setLoadedUser(resData.data.users);
+						setLoadedUser(resData.data.user);
 					})
 					.catch((err) => {
 						console.log(err);

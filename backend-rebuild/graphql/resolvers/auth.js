@@ -4,9 +4,10 @@ const jwt = require('jsonwebtoken');
 const User = require('../../models/user');
 
 module.exports = {
-	user: async (userId) => {
+	user: async ({ id }) => {
 		try {
-			const user = await User.findById(userId);
+			const user = await User.findById(id);
+			console.log(user.id);
 			return {
 				...user._doc,
 				_id: user.id,
@@ -90,8 +91,7 @@ module.exports = {
 				expiresIn: '1h',
 			}
 		);
-		console.log(token);
-		console.log(user.id);
+
 		return { userId: user.id, token: token, tokenExpiration: 1 };
 	},
 };
