@@ -47,12 +47,7 @@ const UserProfileInfo = (props) => {
 
 			<div className="c-user-profile__info">
 				<h2 className="c-user-profile__info__fullname">
-					{props.firstname.concat(
-						' ',
-						props.middlename,
-						' ',
-						props.lastname
-					)}
+					{props.firstname + ' ' + props.middlename + ' ' + props.lastname}
 				</h2>
 				<ul className="c-user-profile__info__detail-list">
 					<li className="c-user-profile__info__detail-item">

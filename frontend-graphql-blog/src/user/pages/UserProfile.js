@@ -84,6 +84,7 @@ const UserProfile = (props) => {
 						firstname
 						middlename
 						lastname
+						
 				
 					}
 					}
@@ -131,15 +132,20 @@ const UserProfile = (props) => {
 	return (
 		<MainBody title={props.title}>
 			{console.log(loadedUser)}
-			{/* <UserProfileInfo
+			<UserProfileInfo
 				// key={loadedUser.id}
 				// uid={id}
 				// image={image}
 				// name={name}
 				// blogCount={blogs}
 				// friendCount={friends}
-				{...loadedUser[0]}
-			/> */}
+				//{...loadedUser[0]}
+				firstname={loadedUser.firstname}
+				middlename={loadedUser.middlename}
+				lastname={loadedUser.lastname}
+				createdBlogs={[1, 2]}
+				friends={100}
+			/>
 		</MainBody>
 	);
 };
