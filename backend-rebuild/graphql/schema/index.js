@@ -59,11 +59,13 @@ input BlogInput {
 
 
 type RootQuery {
-    user(_id: ID!): User!
+    user(id: ID!): User!
     users: [User!]!
     blogs: [Blog!]!
     friends: [Friend!]!
     login(username: String!, password: String!): AuthData!
+
+    
     
     
 }

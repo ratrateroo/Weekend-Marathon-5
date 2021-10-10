@@ -69,12 +69,14 @@ const UserProfile = (props) => {
 	const [loadedUser, setLoadedUser] = useState([]);
 
 	useEffect(() => {
-		const fetchUsers = async () => {
+		console.log(userId);
+
+		const fetchUser = async () => {
 			try {
 				const requestBody = {
 					query: `
-					query User($_id: ID!) {
-					user(_id: $_id) {
+					query User($id: ID!) {
+					user(id: $id) {
 						_id
 						username
 						email
@@ -87,7 +89,7 @@ const UserProfile = (props) => {
 					}
 				`,
 					variables: {
-						_id: userId,
+						id: userId,
 					},
 				};
 
@@ -120,7 +122,7 @@ const UserProfile = (props) => {
 				console.log(err);
 			}
 		};
-		fetchUsers();
+		fetchUser();
 	}, [auth.token, userId]);
 
 	//const loadedUser = USERS.filter((user) => user._id === userId);
@@ -129,7 +131,7 @@ const UserProfile = (props) => {
 	return (
 		<MainBody title={props.title}>
 			{console.log(loadedUser)}
-			<UserProfileInfo
+			{/* <UserProfileInfo
 				// key={loadedUser.id}
 				// uid={id}
 				// image={image}
@@ -137,7 +139,7 @@ const UserProfile = (props) => {
 				// blogCount={blogs}
 				// friendCount={friends}
 				{...loadedUser[0]}
-			/>
+			/> */}
 		</MainBody>
 	);
 };

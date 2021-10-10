@@ -4,6 +4,24 @@ const jwt = require('jsonwebtoken');
 const User = require('../../models/user');
 
 module.exports = {
+	user: async (userId) => {
+		try {
+			const user = await User.findById(userId);
+			return {
+				...user._doc,
+				_id: user.id,
+				username: user.username,
+				email: user.email,
+				password: user.password,
+				firstname: user.firstname,
+				middlename: user.middlename,
+				lastname: user.lastname,
+			};
+		} catch (err) {
+			throw err;
+		}
+	},
+
 	users: async () => {
 		try {
 			const users = await User.find();
