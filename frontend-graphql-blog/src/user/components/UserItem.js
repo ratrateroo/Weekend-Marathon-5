@@ -6,7 +6,7 @@ import './UserItem.css';
 const UserItem = (props) => {
 	return (
 		<li className="o-user-list__item" key={props.id}>
-			<NavLink to={`/${props.id}/profile`}>
+			<NavLink to={`/profile/${props.id}`}>
 				<div className="c-user">
 					<div className="c-user__avatar">
 						<img
