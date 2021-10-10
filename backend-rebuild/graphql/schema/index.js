@@ -24,9 +24,7 @@ type AuthData {
 type Blog {
     _id: ID!
     title: String!
-    content: String!
-    
-    
+    content: String!    
     createdAt: String!
     updatedAt: String!
     
@@ -61,6 +59,7 @@ input BlogInput {
 
 
 type RootQuery {
+    user(_id: ID!): User!
     users: [User!]!
     blogs: [Blog!]!
     friends: [Friend!]!
