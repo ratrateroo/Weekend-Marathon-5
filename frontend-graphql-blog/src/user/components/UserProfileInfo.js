@@ -34,7 +34,7 @@ const UserProfileInfo = (props) => {
 					src={dummy_image}
 					alt={props.username}
 				/>
-				<Button onClick={startChangeImageHandler}>Change Image</Button>
+
 				{changeImage && (
 					<UpdateModal
 						header="Update Profile Picture"
@@ -44,6 +44,7 @@ const UserProfileInfo = (props) => {
 						onConfirm={updateProfileImageHandler}></UpdateModal>
 				)}
 			</div>
+			<Button onClick={startChangeImageHandler}>Change Image</Button>
 
 			<div className="c-user-profile__info">
 				<h2 className="c-user-profile__info__fullname">
