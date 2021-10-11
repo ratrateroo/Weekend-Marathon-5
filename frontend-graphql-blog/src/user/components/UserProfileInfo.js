@@ -4,7 +4,7 @@ import './UserProfileInfo.css';
 import dummy_image from '../../Images/user_dummy.png';
 import Button from '../../shared/components/FormElements/Button';
 
-import UpdateModal from '../../shared/components/UIElements/UpdateModal';
+import UpdatePictureModal from '../../shared/components/UIElements/UpdatePictureModal';
 
 const UserProfileInfo = (props) => {
 	const [updating, setUpdating] = useState(false);
@@ -36,12 +36,12 @@ const UserProfileInfo = (props) => {
 				/>
 
 				{changeImage && (
-					<UpdateModal
+					<UpdatePictureModal
 						header="Update Profile Picture"
 						canCancel
 						canConfirm
 						onCancel={cancelCreateEventHandler}
-						onConfirm={updateProfileImageHandler}></UpdateModal>
+						onConfirm={updateProfileImageHandler}></UpdatePictureModal>
 				)}
 			</div>
 			<Button onClick={startChangeImageHandler}>Change Image</Button>
