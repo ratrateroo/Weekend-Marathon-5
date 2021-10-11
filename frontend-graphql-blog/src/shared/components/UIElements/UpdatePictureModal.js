@@ -2,6 +2,7 @@ import React from 'react';
 
 import Button from '../FormElements/Button';
 
+import ImageUpload from '../FormElements/ImageUpload';
 
 
 import './UpdateModal.css';
@@ -19,6 +20,12 @@ const modal = (props) => (
 						<input type="file" onChange={} />
 						<button onClick={}>Upload!</button>
 					</div>
+
+					 <ImageUpload
+          id="image"
+          onInput={inputHandler}
+          errorText="Please provide an image."
+        />
 					
 				</div>
 			</div>
