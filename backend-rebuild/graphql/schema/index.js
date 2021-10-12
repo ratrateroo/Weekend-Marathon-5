@@ -13,6 +13,7 @@ type User {
     createdBlogs: [Blog!]
     createAt: String!
     updateAt: String!
+    profileimage: String!
 }
 
 type AuthData {
