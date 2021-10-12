@@ -4,7 +4,6 @@ import Button from '../FormElements/Button';
 
 import ImageUpload from '../FormElements/ImageUpload';
 
-
 import './UpdateModal.css';
 
 const modal = (props) => (
@@ -15,18 +14,16 @@ const modal = (props) => (
 		<div>
 			<div className={`c-modal__content-`}>
 				<div>
-				
-					<div>
+					{/* <div>
 						<input type="file" onChange={} />
 						<button onClick={}>Upload!</button>
-					</div>
+					</div> */}
 
-					 <ImageUpload
-          id="image"
-          onInput={inputHandler}
-          errorText="Please provide an image."
-        />
-					
+					{/* <ImageUpload
+						id="image"
+						onInput={inputHandler}
+						errorText="Please provide an image."
+					/> */}
 				</div>
 			</div>
 			<footer className={`c-modal__footer`}>

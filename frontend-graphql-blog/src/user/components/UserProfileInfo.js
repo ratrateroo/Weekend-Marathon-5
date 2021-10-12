@@ -59,12 +59,12 @@ const UserProfileInfo = (props) => {
 					</li>
 				</ul>
 				<Button onClick={startCreateEventHandler}>Update Profile</Button>
-				{updating && (
+				{/* {updating && (
 					<UpdateModal
 						header="Update Profile"
 						canCancel
 						canConfirm></UpdateModal>
-				)}
+				)} */}
 			</div>
 		</div>
 	);

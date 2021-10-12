@@ -83,7 +83,10 @@ const UserProfile = (props) => {
 						password
 						firstname
 						middlename
-						lastname
+						lastname 
+						createdBlogs
+						createAt
+						updateAt
 						
 				
 					}
