@@ -28,7 +28,7 @@ const userSchema = new Schema(
 			type: String,
 			required: true,
 		},
-		createdBlogs: [
+		createdBlog: [
 			{
 				type: Schema.Types.ObjectId,
 				ref: 'Blog',

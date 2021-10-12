@@ -18,7 +18,7 @@ const user = async (userId) => {
 		return {
 			...user._doc,
 			_id: user.id,
-			createdBlogs: blogs.bind(this, user._doc.createdBlogs),
+			createdBlog: blogs.bind(this, user._doc.createdBlog),
 		};
 	} catch (err) {
 		throw err;
