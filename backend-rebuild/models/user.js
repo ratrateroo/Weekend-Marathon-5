@@ -28,6 +28,10 @@ const userSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		profileimage: {
+			type: String,
+			required: false,
+		},
 		createdBlogs: [
 			{
 				type: Schema.Types.ObjectId,
