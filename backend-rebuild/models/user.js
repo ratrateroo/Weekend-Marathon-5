@@ -30,7 +30,7 @@ const userSchema = new Schema(
 		},
 		profileimage: {
 			type: String,
-			required: false,
+			required: true,
 		},
 		createdBlogs: [
 			{

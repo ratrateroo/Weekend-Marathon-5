@@ -52,6 +52,7 @@ module.exports = {
 				firstname: args.userInput.firstname,
 				middlename: args.userInput.middlename,
 				lastname: args.userInput.lastname,
+				profileimage: 'defaultimage',
 			});
 			const result = await user.save();
 			//return { ...result._doc, password: null, _id: result.id };
