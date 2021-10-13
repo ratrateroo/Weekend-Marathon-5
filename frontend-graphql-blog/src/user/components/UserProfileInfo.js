@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Profiler, useState } from 'react';
 
 import './UserProfileInfo.css';
 import dummy_image from '../../Images/user_dummy.png';
@@ -32,7 +32,7 @@ const UserProfileInfo = (props) => {
 			<div className="c-user-profile__image">
 				<img
 					className="c-user-profile__image-pic"
-					src={dummy_image}
+					src={props.profileimage}
 					alt={props.username}
 				/>
 
@@ -42,7 +42,8 @@ const UserProfileInfo = (props) => {
 						canCancel
 						canConfirm
 						onCancel={cancelCreateEventHandler}
-						onConfirm={updateProfileImageHandler}></UpdatePictureModal>
+						onConfirm={updateProfileImageHandler}
+						profileimage={props.profileimage}></UpdatePictureModal>
 				)}
 			</div>
 			<Button onClick={startChangeImageHandler}>Change Image</Button>

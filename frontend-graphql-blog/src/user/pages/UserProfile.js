@@ -6,6 +6,8 @@ import UserProfileInfo from '../components/UserProfileInfo';
 
 import { AuthContext } from '../../shared/context/auth-context';
 
+import dummy_image from '../../Images/user_dummy.png';
+
 const UserProfile = (props) => {
 	const USERS = [
 		{
@@ -149,6 +151,8 @@ const UserProfile = (props) => {
 				lastname={loadedUser.lastname}
 				createdBlogs={[1, 2]}
 				friends={100}
+				//profileimage={loadedUser.profileimage}
+				profileimage={dummy_image}
 			/>
 		</MainBody>
 	);
