@@ -4,6 +4,8 @@ import Button from '../FormElements/Button';
 
 import ImageUpload from '../FormElements/ImageUpload';
 
+import { useForm } from '../../hooks/form-hook';
+
 import './UpdateModal.css';
 
 const modal = (props) => (
