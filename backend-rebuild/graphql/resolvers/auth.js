@@ -17,6 +17,7 @@ module.exports = {
 				firstname: user.firstname,
 				middlename: user.middlename,
 				lastname: user.lastname,
+				profileimage: user.profileimage,
 			};
 		} catch (err) {
 			throw err;

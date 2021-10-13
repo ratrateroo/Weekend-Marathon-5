@@ -22,6 +22,7 @@ const UsersList = (props) => {
     			firstname
     			middlename
    				lastname
+				profileimage
     			
 			}
     
@@ -77,7 +78,7 @@ const UsersList = (props) => {
 					key={user._id}
 					id={user._id}
 					username={user.username}
-					image={'user.image'}
+					profileimage={user.profileimage}
 					name={
 						user.firstname + ' ' + user.middlename + ' ' + user.lastname
 					}

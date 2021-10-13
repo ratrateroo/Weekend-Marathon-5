@@ -20,7 +20,16 @@ const modal = (props) => (
 						<input type="file" onChange={} />
 						<button onClick={}>Upload!</button>
 					</div> */}
+				</div>
 
+				<div className="c-user-profile">
+					<div className="c-user-profile__image">
+						<img
+							className="c-user-profile__image-pic"
+							src={props.profileimage}
+							alt={props.username}
+						/>
+					</div>
 					<ImageUpload
 						id="image"
 						// onInput={inputHandler}
