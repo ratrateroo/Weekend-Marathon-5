@@ -49,7 +49,7 @@ const Modal = (props) => {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				username: formState.inputs.name.value,
+				username: formState.inputs.username.value,
 				email: formState.inputs.email.value,
 				password: formState.inputs.name.value,
 				firstname: formState.inputs.firstname.value,
@@ -67,7 +67,7 @@ const Modal = (props) => {
 			<div>
 				<div className={`c-modal__content-`}>
 					<UpdateProfileForm
-						onChange={(validity) => console.log('We get: ' + validity)}
+						//onChange={(validity) => console.log('We get: ' + validity)}
 						onInput={inputHandler}
 					/>
 				</div>

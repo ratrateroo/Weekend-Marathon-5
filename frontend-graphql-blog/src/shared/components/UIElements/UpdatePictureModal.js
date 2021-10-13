@@ -19,11 +19,11 @@ const modal = (props) => (
 						<button onClick={}>Upload!</button>
 					</div> */}
 
-					{/* <ImageUpload
+					<ImageUpload
 						id="image"
-						onInput={inputHandler}
+						// onInput={inputHandler}
 						errorText="Please provide an image."
-					/> */}
+					/>
 				</div>
 			</div>
 			<footer className={`c-modal__footer`}>

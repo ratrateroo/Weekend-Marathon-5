@@ -5,6 +5,7 @@ import dummy_image from '../../Images/user_dummy.png';
 import Button from '../../shared/components/FormElements/Button';
 
 import UpdatePictureModal from '../../shared/components/UIElements/UpdatePictureModal';
+import UpdateModal from '../../shared/components/UIElements/UpdateModal';
 
 const UserProfileInfo = (props) => {
 	const [updating, setUpdating] = useState(false);
@@ -59,12 +60,12 @@ const UserProfileInfo = (props) => {
 					</li>
 				</ul>
 				<Button onClick={startCreateEventHandler}>Update Profile</Button>
-				{/* {updating && (
+				{updating && (
 					<UpdateModal
 						header="Update Profile"
 						canCancel
 						canConfirm></UpdateModal>
-				)} */}
+				)}
 			</div>
 		</div>
 	);
