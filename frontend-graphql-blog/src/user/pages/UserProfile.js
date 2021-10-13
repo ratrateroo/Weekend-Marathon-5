@@ -87,9 +87,7 @@ const UserProfile = (props) => {
 						middlename
 						lastname 
 						createdBlogs
-						createAt
-						updateAt
-						profileimage
+						
 						
 				
 					}
@@ -124,7 +122,7 @@ const UserProfile = (props) => {
 						console.log(err);
 					});
 
-				console.log('Logging In');
+				console.log('Getting User');
 			} catch (err) {
 				console.log(err);
 			}
@@ -139,7 +137,7 @@ const UserProfile = (props) => {
 		<MainBody title={props.title}>
 			{console.log(loadedUser)}
 			<UserProfileInfo
-				// key={loadedUser.id}
+				key={loadedUser._id}
 				// uid={id}
 				// image={image}
 				// name={name}

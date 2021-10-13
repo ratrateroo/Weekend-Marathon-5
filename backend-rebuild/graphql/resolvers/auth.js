@@ -7,10 +7,10 @@ module.exports = {
 	user: async ({ id }) => {
 		try {
 			const user = await User.findById(id);
-			console.log(user.id);
+			console.log(user._doc);
 			return {
 				...user._doc,
-				_id: user.id,
+				_id: user._id,
 				username: user.username,
 				email: user.email,
 				password: user.password,
