@@ -45,8 +45,8 @@ const App = () => {
 			<Route path="/" exact>
 				<Blogs title="Blogs" />
 			</Route>
-			{/* {token && <Redirect from="/signup" to="/" exact />}
-			{token && <Redirect from="/login" to="/" exact />} */}
+			{/* {token && <Redirect from="/signup" to="/" exact />} */}
+			{token && <Redirect from="/login" to="/users" exact />}
 			{/* {token && <Redirect to="/" />} */}
 			{token && (
 				<Route path="/users" exact>
