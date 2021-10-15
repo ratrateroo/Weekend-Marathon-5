@@ -3,22 +3,15 @@ const jwt = require('jsonwebtoken');
 
 const User = require('../../models/user');
 
+const { transformUser } = require('./merge');
+
 module.exports = {
 	user: async ({ id }) => {
 		try {
 			const user = await User.findById(id);
 			console.log(user._doc);
-			return {
-				...user._doc,
-				_id: user._id,
-				username: user.username,
-				email: user.email,
-				password: user.password,
-				firstname: user.firstname,
-				middlename: user.middlename,
-				lastname: user.lastname,
-				profileimage: user.profileimage,
-			};
+
+			return transformUser(user);
 		} catch (err) {
 			throw err;
 		}

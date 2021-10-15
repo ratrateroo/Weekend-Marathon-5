@@ -33,6 +33,22 @@ const transformBlog = (blog) => {
 	};
 };
 
+const transformUser = (user) => {
+	return {
+		...user._doc,
+		_id: user._doc._id.toString(),
+		username: user.username,
+		email: user.email,
+		password: user.password,
+		firstname: user.firstname,
+		middlename: user.middlename,
+		lastname: user.lastname,
+		profileimage: user.profileimage,
+
+		createdBlogs: blogs.bind(this, user.author),
+	};
+};
+
 exports.transformBlog = transformBlog;
 exports.user = user;
 exports.blogs = blogs;
