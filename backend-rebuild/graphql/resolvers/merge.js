@@ -50,5 +50,6 @@ const transformUser = (user) => {
 };
 
 exports.transformBlog = transformBlog;
+exports.transformUser = transformUser;
 exports.user = user;
 exports.blogs = blogs;
