@@ -1,4 +1,4 @@
-import React, { Profiler, useState } from 'react';
+import React, { useState } from 'react';
 
 import './UserProfileInfo.css';
 import dummy_image from '../../Images/user_dummy.png';
@@ -54,7 +54,7 @@ const UserProfileInfo = (props) => {
 				</h2>
 				<ul className="c-user-profile__info__detail-list">
 					<li className="c-user-profile__info__detail-item">
-						Blogs: {props.createdBlogs.length}
+						Blogs: {props.createdBlogs}
 					</li>
 					<li className="c-user-profile__info__detail-item">
 						Friends: {props.friends}

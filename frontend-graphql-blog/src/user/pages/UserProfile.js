@@ -68,7 +68,7 @@ const UserProfile = (props) => {
 	];
 	const userId = useParams().uid;
 	const auth = useContext(AuthContext);
-	const [loadedUser, setLoadedUser] = useState([]);
+	const [loadedUser, setLoadedUser] = useState({});
 
 	useEffect(() => {
 		console.log(userId);
@@ -119,7 +119,7 @@ const UserProfile = (props) => {
 					.then((resData) => {
 						console.log(resData.data);
 						console.log(resData.data.user);
-						console.log(resData.data.user.createdBlogs);
+						console.log(resData.data.user.createdBlogs.length);
 						setLoadedUser(resData.data.user);
 					})
 					.catch((err) => {
@@ -151,7 +151,7 @@ const UserProfile = (props) => {
 				firstname={loadedUser.firstname}
 				middlename={loadedUser.middlename}
 				lastname={loadedUser.lastname}
-				createdBlogs={[1, 2]}
+				createdBlogs={loadedUser.createdBlogs}
 				friends={100}
 				//profileimage={loadedUser.profileimage}
 				profileimage={dummy_image}
