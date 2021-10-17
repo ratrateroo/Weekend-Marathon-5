@@ -86,7 +86,10 @@ const UserProfile = (props) => {
 						firstname
 						middlename
 						lastname 
-						createdBlogs
+						createdBlogs {
+							_id
+							
+						}
 						
 						
 				
@@ -116,6 +119,7 @@ const UserProfile = (props) => {
 					.then((resData) => {
 						console.log(resData.data);
 						console.log(resData.data.user);
+						console.log(resData.data.user.createdBlogs);
 						setLoadedUser(resData.data.user);
 					})
 					.catch((err) => {
@@ -135,7 +139,7 @@ const UserProfile = (props) => {
 
 	return (
 		<MainBody title={props.title}>
-			{console.log(loadedUser)}
+			{console.log(loadedUser.createdBlogs)}
 			<UserProfileInfo
 				key={loadedUser._id}
 				// uid={id}

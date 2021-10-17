@@ -34,6 +34,7 @@ const transformBlog = (blog) => {
 };
 
 const transformUser = (user) => {
+	console.log('array', user.createdBlogs.length);
 	return {
 		...user._doc,
 		_id: user._doc._id.toString(),
