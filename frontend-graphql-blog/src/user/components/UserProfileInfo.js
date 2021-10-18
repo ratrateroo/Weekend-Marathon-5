@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './UserProfileInfo.css';
 import dummy_image from '../../Images/user_dummy.png';
@@ -10,6 +10,12 @@ import UpdateModal from '../../shared/components/UIElements/UpdateModal';
 const UserProfileInfo = (props) => {
 	const [updating, setUpdating] = useState(false);
 	const [changeImage, setChangeImage] = useState(false);
+	// const [createdBlogsCount, setCreatedBlogsCount] = useState();
+
+	// useEffect(() => {
+	// 	console.log(props.createdBlogs);
+	// 	setCreatedBlogsCount(props.createdBlogs.length);
+	// }, []);
 
 	const startCreateEventHandler = () => {
 		setUpdating(!updating);

@@ -69,6 +69,7 @@ const UserProfile = (props) => {
 	const userId = useParams().uid;
 	const auth = useContext(AuthContext);
 	const [loadedUser, setLoadedUser] = useState({});
+	const [userCreatedBlogs, setUserCreatedBlogs] = useState();
 
 	useEffect(() => {
 		console.log(userId);
@@ -119,8 +120,9 @@ const UserProfile = (props) => {
 					.then((resData) => {
 						console.log(resData.data);
 						console.log(resData.data.user);
-						console.log(resData.data.user.createdBlogs.length);
+						//console.log(resData.data.user.createdBlogs.length);
 						setLoadedUser(resData.data.user);
+						//setUserCreatedBlogs(resData.data.user.createdBlogs.length);
 					})
 					.catch((err) => {
 						console.log(err);

@@ -15,10 +15,11 @@ const blogs = async (blogIds) => {
 const user = async (userId) => {
 	try {
 		const user = await User.findById(userId);
+		const blogs = blogs.bind(this, user._doc.createdBlogs);
 		return {
 			...user._doc,
 			_id: user.id,
-			createdBlogs: blogs.bind(this, user._doc.createdBlogs),
+			createdBlogs: blogs.length,
 		};
 	} catch (err) {
 		throw err;
@@ -34,7 +35,7 @@ const transformBlog = (blog) => {
 };
 
 const transformUser = (user) => {
-	console.log('array', user.createdBlogs.length);
+	console.log('array', user.createdBlogs);
 	return {
 		...user._doc,
 		_id: user._doc._id.toString(),
