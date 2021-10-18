@@ -15,12 +15,13 @@ const blogs = async (blogIds) => {
 const user = async (userId) => {
 	try {
 		const user = await User.findById(userId);
-		const blogs = blogs.bind(this, user._doc.createdBlogs);
-		return {
-			...user._doc,
-			_id: user.id,
-			createdBlogs: blogs.length,
-		};
+		//const blogCount = blogs.bind(this, user._doc.createdBlogs);
+		// return {
+		// 	...user._doc,
+		// 	_id: user.id,
+		// 	createdBlogs: blogCount.length,
+		// };
+		return transformUser(user);
 	} catch (err) {
 		throw err;
 	}
@@ -36,6 +37,8 @@ const transformBlog = (blog) => {
 
 const transformUser = (user) => {
 	console.log('array', user.createdBlogs);
+	console.log('length', user.createdBlogs.length);
+	const blogCount = blogs.bind(this, user.author);
 	return {
 		...user._doc,
 		_id: user._doc._id.toString(),
@@ -47,7 +50,7 @@ const transformUser = (user) => {
 		lastname: user.lastname,
 		profileimage: user.profileimage,
 
-		createdBlogs: blogs.bind(this, user.author),
+		createdBlogs: blogCount.length,
 	};
 };
 
