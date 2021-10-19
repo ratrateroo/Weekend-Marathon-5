@@ -47,6 +47,7 @@ const App = () => {
 			</Route>
 			{/* {token && <Redirect from="/signup" to="/" exact />} */}
 			{token && <Redirect from="/login" to="/users" exact />}
+			{!token && <Redirect from="/users" to="/login" exact />}
 			{/* {token && <Redirect to="/" />} */}
 			{token && (
 				<Route path="/users" exact>
@@ -66,9 +67,11 @@ const App = () => {
 			<Route path="/blog/:bid" exact>
 				<Blog title="<Username>'s Blog" />
 			</Route>
-			<Route path="/profile/:uid" exact>
-				<UserProfile title="User Profile" />
-			</Route>
+			{isLoggedIn && (
+				<Route path="/profile/:uid" exact>
+					<UserProfile title="User Profile" />
+				</Route>
+			)}
 			<Route path="/login" exact>
 				<UserLogin title="User Login" />
 			</Route>
