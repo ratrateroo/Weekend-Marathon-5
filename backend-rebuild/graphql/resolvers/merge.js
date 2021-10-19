@@ -38,7 +38,7 @@ const transformBlog = (blog) => {
 const transformUser = (user) => {
 	console.log('array', user.createdBlogs);
 	console.log('length', user.createdBlogs.length);
-	const blogCount = blogs.bind(this, user.author);
+	//const blogCount = blogs.bind(this, user.author);
 	return {
 		...user._doc,
 		_id: user._doc._id.toString(),
@@ -50,7 +50,7 @@ const transformUser = (user) => {
 		lastname: user.lastname,
 		profileimage: user.profileimage,
 
-		createdBlogs: blogCount.length,
+		createdBlogs: blogs.bind(this, user.author),
 	};
 };
 
