@@ -60,7 +60,7 @@ const UserProfileInfo = (props) => {
 				</h2>
 				<ul className="c-user-profile__info__detail-list">
 					<li className="c-user-profile__info__detail-item">
-						Blogs: {props.createdBlogs}
+						Blogs: {props.createdBlogs?.length}
 					</li>
 					<li className="c-user-profile__info__detail-item">
 						Friends: {props.friends}
