@@ -21,12 +21,16 @@ const UserProfileInfo = (props) => {
 		setUpdating(!updating);
 	};
 
+	const cancelCreateEventHandler = () => {
+		setUpdating(!updating);
+	};
+
 	const startChangeImageHandler = () => {
 		setChangeImage(!changeImage);
 	};
 
-	const cancelCreateEventHandler = () => {
-		setUpdating(!updating);
+	const cancelChangeImageHandler = () => {
+		setChangeImage(!changeImage);
 	};
 
 	const updateProfileImageHandler = () => {
@@ -47,7 +51,7 @@ const UserProfileInfo = (props) => {
 						header="Update Profile Picture"
 						canCancel
 						canConfirm
-						onCancel={cancelCreateEventHandler}
+						onCancel={cancelChangeImageHandler}
 						onConfirm={updateProfileImageHandler}
 						profileimage={props.profileimage}></UpdatePictureModal>
 				)}
@@ -71,7 +75,8 @@ const UserProfileInfo = (props) => {
 					<UpdateModal
 						header="Update Profile"
 						canCancel
-						canConfirm></UpdateModal>
+						canConfirm
+						onCancel={cancelCreateEventHandler}></UpdateModal>
 				)}
 			</div>
 		</div>
