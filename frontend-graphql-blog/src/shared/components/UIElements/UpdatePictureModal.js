@@ -6,7 +6,7 @@ import ImageUpload from '../FormElements/ImageUpload';
 
 import { useForm } from '../../hooks/form-hook';
 
-import './UpdateModal.css';
+import './UpdatePictureModal.css';
 
 const modal = (props) => (
 	<div className={`c-modal`} style={props.style}>

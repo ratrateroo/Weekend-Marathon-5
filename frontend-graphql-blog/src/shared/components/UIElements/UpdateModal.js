@@ -66,10 +66,10 @@ const Modal = (props) => {
 			</header>
 			<div>
 				<div className={`c-modal__content-`}>
-					<UpdateProfileForm
+					{/* <UpdateProfileForm
 						//onChange={(validity) => console.log('We get: ' + validity)}
 						onInput={inputHandler}
-					/>
+					/> */}
 				</div>
 				<footer className={`c-modal__footer`}>
 					{props.canCancel && (
