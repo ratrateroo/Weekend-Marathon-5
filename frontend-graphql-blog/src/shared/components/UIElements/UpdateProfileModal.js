@@ -7,9 +7,9 @@ import UpdateProfileForm from './UpdateProfileForm';
 
 import { useForm } from '../../hooks/form-hook';
 
-import './UpdateModal.css';
+import './UpdateProfileModal.css';
 
-const Modal = (props) => {
+const UpdateProfileModal = (props) => {
 	const userId = useParams().userId;
 	const [formState, inputHandler] = useForm(
 		{
@@ -66,10 +66,10 @@ const Modal = (props) => {
 			</header>
 			<div>
 				<div className={`c-modal__content-`}>
-					{/* <UpdateProfileForm
-						//onChange={(validity) => console.log('We get: ' + validity)}
+					<UpdateProfileForm
+						onChange={(validity) => console.log('We get: ' + validity)}
 						onInput={inputHandler}
-					/> */}
+					/>
 				</div>
 				<footer className={`c-modal__footer`}>
 					{props.canCancel && (
@@ -96,4 +96,4 @@ const Modal = (props) => {
 	);
 };
 
-export default Modal;
+export default UpdateProfileModal;
