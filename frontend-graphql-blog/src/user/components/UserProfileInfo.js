@@ -39,22 +39,28 @@ const UserProfileInfo = (props) => {
 
 	return (
 		<div className="c-user-profile">
+			{updating && (
+				<UpdateModal
+					header="Update Profile"
+					canCancel
+					canConfirm
+					onCancel={cancelCreateEventHandler}></UpdateModal>
+			)}
+			{changeImage && (
+				<UpdatePictureModal
+					header="Update Profile Picture"
+					canCancel
+					canConfirm
+					onCancel={cancelChangeImageHandler}
+					onConfirm={updateProfileImageHandler}
+					profileimage={props.profileimage}></UpdatePictureModal>
+			)}
 			<div className="c-user-profile__image">
 				<img
 					className="c-user-profile__image-pic"
 					src={props.profileimage}
 					alt={props.username}
 				/>
-
-				{changeImage && (
-					<UpdatePictureModal
-						header="Update Profile Picture"
-						canCancel
-						canConfirm
-						onCancel={cancelChangeImageHandler}
-						onConfirm={updateProfileImageHandler}
-						profileimage={props.profileimage}></UpdatePictureModal>
-				)}
 			</div>
 			<Button onClick={startChangeImageHandler}>Change Image</Button>
 
@@ -71,13 +77,6 @@ const UserProfileInfo = (props) => {
 					</li>
 				</ul>
 				<Button onClick={startCreateEventHandler}>Update Profile</Button>
-				{updating && (
-					<UpdateModal
-						header="Update Profile"
-						canCancel
-						canConfirm
-						onCancel={cancelCreateEventHandler}></UpdateModal>
-				)}
 			</div>
 		</div>
 	);
