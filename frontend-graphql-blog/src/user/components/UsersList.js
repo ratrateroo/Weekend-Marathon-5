@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../../shared/context/auth-context';
 import UserItem from './UserItem';
 import './UsersList.css';
+import dummy_image from '../../Images/user_dummy.png';
 
 const UsersList = (props) => {
 	const auth = useContext(AuthContext);
@@ -78,7 +79,7 @@ const UsersList = (props) => {
 					key={user._id}
 					id={user._id}
 					username={user.username}
-					profileimage={user.profileimage}
+					profileimage={dummy_image}
 					name={
 						user.firstname + ' ' + user.middlename + ' ' + user.lastname
 					}
