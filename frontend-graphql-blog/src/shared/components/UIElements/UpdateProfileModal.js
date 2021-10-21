@@ -61,11 +61,11 @@ const UpdateProfileModal = (props) => {
 
 	return (
 		<div className={`c-modal`} style={props.style}>
-			<header className={`c-modal__header`}>
+			<div className={`c-modal__header`}>
 				<h2 className={`c-modal__title`}>{props.title}</h2>
-			</header>
-			<div>
-				<div className={`c-modal__content-`}>
+			</div>
+			<div className={`c-modal__body`}>
+				<div className={`c-modal__content`}>
 					<UpdateProfileForm
 						onChange={(validity) => console.log('We get: ' + validity)}
 						onInput={inputHandler}

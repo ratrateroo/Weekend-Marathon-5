@@ -41,14 +41,14 @@ const UserProfileInfo = (props) => {
 		<div className="c-user-profile">
 			{updating && (
 				<UpdateProfileModal
-					header="Update Profile"
+					title="Update Profile"
 					canCancel
 					canConfirm
 					onCancel={cancelCreateEventHandler}></UpdateProfileModal>
 			)}
 			{changeImage && (
 				<UpdatePictureModal
-					header="Update Profile Picture"
+					title="Update Profile Picture"
 					canCancel
 					canConfirm
 					onCancel={cancelChangeImageHandler}
