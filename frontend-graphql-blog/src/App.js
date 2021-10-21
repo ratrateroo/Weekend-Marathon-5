@@ -94,8 +94,8 @@ const App = () => {
 				logout: logout,
 			}}>
 			<Router>
-				{routes}
 				<MainNavigation />
+				{routes}
 			</Router>
 		</AuthContext.Provider>
 	);
