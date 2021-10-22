@@ -53,7 +53,7 @@ const UpdatePictureModal = (props) => {
 						onInput={inputHandler}
 						onUpload={currentImageHandler}
 						currentimage={props.profileimage}
-						errorText="Please provide an image."
+						errorText={!currentimage ? 'Please provide an image.' : null}
 					/>
 				</div>
 				<footer className={`c-modal__footer`}>
@@ -69,7 +69,7 @@ const UpdatePictureModal = (props) => {
 						<div className="c-form-button">
 							<Button
 								submit
-								disabled={!formState.isValid}
+								disabled={!currentimage}
 								onClick={props.onConfirm}>
 								Ok
 							</Button>

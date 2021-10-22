@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import './UserProfileInfo.css';
-import dummy_image from '../../Images/user_dummy.png';
+
 import Button from '../../shared/components/FormElements/Button';
 
 import UpdatePictureModal from '../../shared/components/UIElements/UpdatePictureModal';
