@@ -87,6 +87,7 @@ const UserProfile = (props) => {
 						firstname
 						middlename
 						lastname 
+						profileimage
 						createdBlogs {
 							_id
 							
@@ -156,7 +157,7 @@ const UserProfile = (props) => {
 				createdBlogs={loadedUser.createdBlogs}
 				friends={100}
 				//profileimage={loadedUser.profileimage}
-				profileimage={dummy_image}
+				profileimage={loadedUser.profileimage}
 			/>
 		</MainBody>
 	);
