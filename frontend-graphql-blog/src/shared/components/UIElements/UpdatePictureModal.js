@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Button from '../FormElements/Button';
 
@@ -8,7 +8,13 @@ import { useForm } from '../../hooks/form-hook';
 
 import './UpdatePictureModal.css';
 
-const modal = (props) => (
+const Modal = (props) => {
+	const [currentimage, setCurrentImage] = useState(null);
+
+	const currentImageHandler = (image) => {
+		setCurrentImage(image);
+	};
+
 	<div className={`c-modal`} style={props.style}>
 		<div className={`c-modal__header`}>
 			<h2 className={`c-modal__title`}>{props.title}</h2>
@@ -24,17 +30,20 @@ const modal = (props) => (
 
 				<div className="c-user-updateprofile">
 					<div className="c-user-updateprofile__image">
-						<img
+						{/* <img
 							className="c-user-updateprofile__image-pic"
 							src={props.profileimage}
 							alt={props.username}
+						/> */}
+
+						<ImageUpload
+							id="image"
+							// onInput={inputHandler}
+							onUpload={currentImageHandler}
+							currentimage={props.profileimage}
+							errorText="Please provide an image."
 						/>
 					</div>
-					<ImageUpload
-						id="image"
-						// onInput={inputHandler}
-						errorText="Please provide an image."
-					/>
 				</div>
 			</div>
 			<footer className={`c-modal__footer`}>
@@ -55,7 +64,7 @@ const modal = (props) => (
 				)}
 			</footer>
 		</div>
-	</div>
-);
+	</div>;
+};
 
 export default modal;
