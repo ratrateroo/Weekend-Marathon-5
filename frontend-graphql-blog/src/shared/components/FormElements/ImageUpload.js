@@ -17,6 +17,7 @@ const ImageUpload = (props) => {
 		const fileReader = new FileReader();
 		fileReader.onload = () => {
 			setPreviewUrl(fileReader.result);
+			props.onUpload(fileReader.result);
 		};
 		fileReader.readAsDataURL(file);
 	}, [file]);
@@ -42,7 +43,7 @@ const ImageUpload = (props) => {
 
 	return (
 		<div className="form-control">
-			<div className={`image-upload ${props.center && 'center'}`}>
+			{/* <div className={`image-upload ${props.center && 'center'}`}>
 				<div className="image-upload__preview">
 					{previewUrl ? (
 						<img
@@ -59,7 +60,7 @@ const ImageUpload = (props) => {
 					)}
 					{!props.currentimage && <p>Please pick an image.</p>}
 				</div>
-			</div>
+			</div> */}
 			<input
 				id={props.id}
 				ref={filePickerRef}
