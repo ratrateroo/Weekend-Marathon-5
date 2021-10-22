@@ -30,3 +30,8 @@
 .c-form-input-filepicker {
 	display: none;
 }
+
+.c-form-input-filepicker-message {
+	font-size: 0.8rem;
+	color: var(--Red-Wine);
+}

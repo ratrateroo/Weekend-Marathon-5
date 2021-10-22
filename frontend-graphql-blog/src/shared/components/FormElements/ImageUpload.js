@@ -72,11 +72,14 @@ const ImageUpload = (props) => {
 			/>
 			<div className="c-form-upload-button">
 				<Button submit onClick={pickImageHandler}>
-					PICK IMAGE
+					Pick an image
 				</Button>
+				{!isValid && (
+					<p className="c-form-input-filepicker-message">
+						{props.errorText}
+					</p>
+				)}
 			</div>
-
-			{!isValid && <p>{props.errorText}</p>}
 		</div>
 	);
 };
