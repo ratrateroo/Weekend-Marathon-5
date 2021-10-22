@@ -10,7 +10,16 @@ import './UpdatePictureModal.css';
 
 const UpdatePictureModal = (props) => {
 	const [currentimage, setCurrentImage] = useState(props.profileimage);
-	console.log(currentimage);
+
+	const [formState, inputHandler] = useForm(
+		{
+			profileimage: {
+				value: '',
+				isValid: true,
+			},
+		},
+		false
+	);
 
 	const currentImageHandler = (image) => {
 		setCurrentImage(image);
@@ -41,7 +50,7 @@ const UpdatePictureModal = (props) => {
 					</div>
 					<ImageUpload
 						id="image"
-						// onInput={inputHandler}
+						onInput={inputHandler}
 						onUpload={currentImageHandler}
 						currentimage={props.profileimage}
 						errorText="Please provide an image."
@@ -58,7 +67,10 @@ const UpdatePictureModal = (props) => {
 
 					{props.canConfirm && (
 						<div className="c-form-button">
-							<Button submit onClick={props.onConfirm}>
+							<Button
+								submit
+								disabled={!formState.isValid}
+								onClick={props.onConfirm}>
 								Ok
 							</Button>
 						</div>
