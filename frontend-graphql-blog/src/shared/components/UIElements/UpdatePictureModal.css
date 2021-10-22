@@ -38,3 +38,32 @@
 	padding: 0.5rem 0.5rem;
 	display: flex;
 }
+
+.c-user-updateprofile {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+.c-user-updateprofile__image {
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	/* background-image: url('../Images/ChloeAvatar.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center; */
+	overflow: hidden;
+}
+
+.c-user-updateprofile__image-pic {
+	display: block;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+}

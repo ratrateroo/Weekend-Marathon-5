@@ -22,10 +22,10 @@ const modal = (props) => (
 					</div> */}
 				</div>
 
-				<div className="c-user-profile">
-					<div className="c-user-profile__image">
+				<div className="c-user-updateprofile">
+					<div className="c-user-updateprofile__image">
 						<img
-							className="c-user-profile__image-pic"
+							className="c-user-updateprofile__image-pic"
 							src={props.profileimage}
 							alt={props.username}
 						/>
