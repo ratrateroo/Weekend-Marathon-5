@@ -26,3 +26,7 @@
 	padding: 1rem;
 	width: 100%;
 }
+
+.c-form-input-filepicker {
+	display: none;
+}

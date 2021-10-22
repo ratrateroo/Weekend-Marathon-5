@@ -62,9 +62,10 @@ const ImageUpload = (props) => {
 				</div>
 			</div> */}
 			<input
+				className="c-form-input-filepicker"
 				id={props.id}
 				ref={filePickerRef}
-				style={{ display: 'none' }}
+				// style={}
 				type="file"
 				accept=".jpg,.png,.jpeg"
 				onChange={pickedHandler}
