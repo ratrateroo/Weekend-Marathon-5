@@ -68,6 +68,7 @@ module.exports = {
 			throw err;
 		}
 	},
+
 	updateImage: async ({ id, profileimage }) => {
 		try {
 			const existingUser = await User.findOne({

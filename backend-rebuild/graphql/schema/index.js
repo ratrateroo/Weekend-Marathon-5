@@ -52,12 +52,7 @@ input UserInput {
 input BlogInput {
     title: String!
     content: String!    
-    
 }
-
-
-
-
 
 type RootQuery {
     user(id: ID!): User!
@@ -65,10 +60,6 @@ type RootQuery {
     blogs: [Blog!]!
     friends: [Friend!]!
     login(username: String!, password: String!): AuthData!
-
-    
-    
-    
 }
 
 type RootMutation {
@@ -76,7 +67,7 @@ type RootMutation {
     createBlog(blogInput: BlogInput): Blog
     addFriend(friendId: ID!): Friend!
     removeFriend(friendId: ID!): Friend!
-    updateImage(userId: ID!): User
+    updateImage(userId: ID!, profileimage: String!): User
     }
 
 schema {
