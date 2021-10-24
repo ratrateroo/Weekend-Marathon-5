@@ -9,6 +9,8 @@ const graphQlSchema = require('./graphql/schema/index');
 const graphQlResolvers = require('./graphql/resolvers/index');
 const isAuth = require('./middleware/is-auth');
 
+const fileUpload = require('./middleware/file-upload');
+
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -28,6 +30,7 @@ app.use(isAuth);
 
 app.use(
 	'/graphql',
+	fileUpload.single('image'),
 	graphqlHTTP({
 		schema: graphQlSchema,
 		rootValue: graphQlResolvers,
