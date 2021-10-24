@@ -68,6 +68,24 @@ module.exports = {
 			throw err;
 		}
 	},
+	updateImage: async ({ id, profileimage }) => {
+		try {
+			const existingUser = await User.findOne({
+				id: id,
+			});
+			if (!existingUser) {
+				throw new Error("Can't find that user.");
+			}
+
+			existingUser.profileimage = profileimage;
+
+			const result = await user.save();
+			return transformUser(existingUser);
+		} catch (err) {
+			throw err;
+		}
+	},
+
 	login: async ({ username, password }) => {
 		const user = await User.findOne({ username: username });
 		if (!user) {

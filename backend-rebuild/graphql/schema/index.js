@@ -76,6 +76,7 @@ type RootMutation {
     createBlog(blogInput: BlogInput): Blog
     addFriend(friendId: ID!): Friend!
     removeFriend(friendId: ID!): Friend!
+    updateImage(userId: ID!): User
     }
 
 schema {
