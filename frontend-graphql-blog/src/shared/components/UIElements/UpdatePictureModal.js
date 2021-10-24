@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import Button from '../FormElements/Button';
 
@@ -6,10 +6,14 @@ import ImageUpload from '../FormElements/ImageUpload';
 
 import { useForm } from '../../hooks/form-hook';
 
+import { AuthContext } from '../../context/auth-context';
+
 import './UpdatePictureModal.css';
 
 const UpdatePictureModal = (props) => {
 	const [currentimage, setCurrentImage] = useState(props.profileimage);
+
+	const auth = useContext(AuthContext);
 
 	const [formState, inputHandler] = useForm(
 		{
@@ -25,7 +29,7 @@ const UpdatePictureModal = (props) => {
 		setCurrentImage(image);
 	};
 
-	const updateProfileImageHandler = () => {
+	const updateProfileImageHandler = (event) => {
 		console.log('Update Profile Image');
 
 		event.preventDefault();
@@ -50,6 +54,9 @@ const UpdatePictureModal = (props) => {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
+				//Authorization: 'Bearer ' + auth.token,
+				'Access-Control-Allow-Origin': 'http://localhost:3000',
+				'Access-Control-Allow-Credentials': 'true',
 			},
 			body: JSON.stringify(requestBody),
 		})
