@@ -33,56 +33,6 @@ const UserProfileInfo = (props) => {
 		setChangeImage(!changeImage);
 	};
 
-	const updateProfileImageHandler = () => {
-		console.log('Update Profile Image');
-
-		// 	const requestBody = {
-		// 		query: `
-		//     query Login($username: String!, $password: String!) {
-		//       login(username: $username, password: $password) {
-		//         userId
-		//         token
-		//         tokenExpiration
-		//       }
-		//     }
-		//   `,
-		// 		variables: {
-		// 			username: formState.inputs.username.value,
-		// 			password: formState.inputs.password.value,
-		// 		},
-		// 	};
-
-		// 	fetch('http://localhost:8000/graphql', {
-		// 		method: 'POST',
-		// 		headers: {
-		// 			'Content-Type': 'application/json',
-		// 		},
-		// 		body: JSON.stringify(requestBody),
-		// 	})
-		// 		.then((res) => {
-		// 			if (res.status !== 200 && res.status !== 201) {
-		// 				throw new Error('Failed!');
-		// 			}
-
-		// 			return res.json();
-		// 		})
-		// 		.then((resData) => {
-		// 			if (resData.data.login.token) {
-		// 				auth.login(
-		// 					resData.data.login.token,
-		// 					resData.data.login.userId,
-		// 					resData.data.login.tokenExpiration
-		// 				);
-		// 			}
-		// 		})
-		// 		.catch((err) => {
-		// 			console.log(err);
-		// 		});
-
-		// 	console.log('Logging In');
-		// auth.login();
-	};
-
 	return (
 		<div className="c-user-profile">
 			{updating && (
@@ -94,11 +44,11 @@ const UserProfileInfo = (props) => {
 			)}
 			{changeImage && (
 				<UpdatePictureModal
+					userId={props.userId}
 					title="Update Profile Picture"
 					canCancel
 					canConfirm
 					onCancel={cancelChangeImageHandler}
-					onConfirm={updateProfileImageHandler}
 					profileimage={props.profileimage}></UpdatePictureModal>
 			)}
 			<div className="c-user-profile__image">

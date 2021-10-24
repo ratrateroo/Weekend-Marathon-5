@@ -25,6 +25,49 @@ const UpdatePictureModal = (props) => {
 		setCurrentImage(image);
 	};
 
+	const updateProfileImageHandler = () => {
+		console.log('Update Profile Image');
+
+		event.preventDefault();
+
+		const requestBody = {
+			query: `
+			mutation {
+				updateImage( 
+					userId: "${props.userId}",
+					profileimage: "${currentimage}",					
+
+				) {
+					username
+					profileimage
+					email
+				}
+			}
+			`,
+		};
+
+		fetch('http://localhost:8000/graphql', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(requestBody),
+		})
+			.then((res) => {
+				if (res.status !== 200 && res.status !== 201) {
+					throw new Error('Failed!');
+				}
+				return res.json();
+			})
+			.then((resData) => {
+				console.log(resData);
+				console.log('Image updated.');
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
+
 	return (
 		<div className={`c-modal`} style={props.style}>
 			<div className={`c-modal__header`}>
@@ -70,7 +113,7 @@ const UpdatePictureModal = (props) => {
 							<Button
 								submit
 								disabled={!currentimage}
-								onClick={props.onConfirm}>
+								onClick={updateProfileImageHandler}>
 								Ok
 							</Button>
 						</div>

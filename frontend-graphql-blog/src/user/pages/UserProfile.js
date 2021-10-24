@@ -145,6 +145,7 @@ const UserProfile = (props) => {
 			{console.log(loadedUser.createdBlogs)}
 			<UserProfileInfo
 				key={loadedUser._id}
+				userId={loadedUser._id}
 				// uid={id}
 				// image={image}
 				// name={name}
