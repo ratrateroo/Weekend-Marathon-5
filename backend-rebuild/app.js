@@ -4,6 +4,8 @@ const { graphqlHTTP } = require('express-graphql');
 
 const mongoose = require('mongoose');
 
+//const { GraphQLUpload } = require('graphql-upload');
+
 const graphQlSchema = require('./graphql/schema/index');
 
 const graphQlResolvers = require('./graphql/resolvers/index');
