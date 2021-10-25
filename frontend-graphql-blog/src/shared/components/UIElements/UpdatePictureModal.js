@@ -34,6 +34,8 @@ const UpdatePictureModal = (props) => {
 
 		event.preventDefault();
 
+		const formData = new FormData();
+
 		const requestBody = {
 			query: `
 			mutation {
@@ -50,19 +52,23 @@ const UpdatePictureModal = (props) => {
 			`,
 		};
 
-		const formData = new FormData();
-		formData.append('image', formState.inputs.profileimage.value);
+		formData.append('image', currentimage);
+		console.log(currentimage);
 
-		fetch('http://localhost:8000/graphql', {
+		const options = {
 			method: 'POST',
-			headers: {
-				//'Content-Type': 'application/json',
-				Authorization: 'Bearer ' + auth.token,
-				//'Access-Control-Allow-Origin': 'http://localhost:3000',
-				//'Access-Control-Allow-Credentials': 'true',
-			},
+			//headers: {
+			//'Content-Type': 'application/json',
+			//Authorization: 'Bearer ' + auth.token,
+			//'Access-Control-Allow-Origin': 'http://localhost:3000',
+			//'Access-Control-Allow-Credentials': 'true',
+			//},
 			body: formData,
-		})
+		};
+
+		delete options.headers['Content-Type'];
+
+		fetch('http://localhost:8000/graphql', options)
 			.then((res) => {
 				if (res.status !== 200 && res.status !== 201) {
 					throw new Error('Failed!');
