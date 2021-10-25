@@ -25,7 +25,7 @@ const UpdatePictureModal = (props) => {
 		false
 	);
 
-	const currentImageHandler = (image) => {
+	const changeCurrentImageHandler = (image) => {
 		setCurrentImage(image);
 	};
 
@@ -50,15 +50,18 @@ const UpdatePictureModal = (props) => {
 			`,
 		};
 
+		const formData = new FormData();
+		formData.append('image', formState.inputs.profileimage.value);
+
 		fetch('http://localhost:8000/graphql', {
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/json',
-				//Authorization: 'Bearer ' + auth.token,
-				'Access-Control-Allow-Origin': 'http://localhost:3000',
-				'Access-Control-Allow-Credentials': 'true',
+				//'Content-Type': 'application/json',
+				Authorization: 'Bearer ' + auth.token,
+				//'Access-Control-Allow-Origin': 'http://localhost:3000',
+				//'Access-Control-Allow-Credentials': 'true',
 			},
-			body: JSON.stringify(requestBody),
+			body: formData,
 		})
 			.then((res) => {
 				if (res.status !== 200 && res.status !== 201) {
@@ -101,7 +104,7 @@ const UpdatePictureModal = (props) => {
 					<ImageUpload
 						id="image"
 						onInput={inputHandler}
-						onUpload={currentImageHandler}
+						onUpload={changeCurrentImageHandler}
 						currentimage={props.profileimage}
 						errorText={!currentimage ? 'Please provide an image.' : null}
 					/>
